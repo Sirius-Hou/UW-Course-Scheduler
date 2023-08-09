@@ -1,0 +1,4 @@
+Course Name: CS247	 (Software Eng Principles)
+[4053]    LEC 001   (UW    U)           Enrolment Capacity: 150       Enrolment Total: 126          Waitinglist Capacity: 0       Waitinglist Total: 0          Schedule: 10:00-11:20TTh                     Room: STC 0050                     Instructor: Evans,Ross             
+[4054]    TUT 101   (UW    U)           Enrolment Capacity: 150       Enrolment Total: 126          Waitinglist Capacity: 0       Waitinglist Total: 0          Schedule: 10:30-11:20W                       Room: STC 0010                     
+[4055]    TST 201   (UW    U)           Enrolment Capacity: 150       Enrolment Total: 126          Waitinglist Capacity: 0       Waitinglist Total: 0          Schedule: 04:30-06:20Th06/29-06/29           Room:                              Instructor: King,Scott             

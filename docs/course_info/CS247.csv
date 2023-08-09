@@ -1,0 +1,7 @@
+Subject,Catalog#,Units,Title
+CS,247,0.5,Software Eng Principles
+Class,Comp Sec,Camp Loc,Assoc. Class,Rel 1,Rel 2,Enrl Cap,Enrl Tot,Wait Cap,Wait Tot,Time Days/Date,Bldg Room,Instructor
+4053,LEC 001,UW    U,1,101,201,150,126,0,0,10:00-11:20TTh,STC 0050,"Evans,Ross"
+4054,TUT 101,UW    U,1,,,150,126,0,0,10:30-11:20W,STC 0010
+4055,TST 201,UW    U,1,,,150,126,0,0,04:30-06:20Th06/29-06/29,,"King,Scott"
+""

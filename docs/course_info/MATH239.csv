@@ -1,0 +1,18 @@
+Subject,Catalog#,Units,Title
+MATH,239,0.5,Intro Combinatorics
+Notes: For LECS 001-003: Choose TUT section for Related 1. LEC 004's TUT is auto-enrolled.
+Class,Comp Sec,Camp Loc,Assoc. Class,Rel 1,Rel 2,Enrl Cap,Enrl Tot,Wait Cap,Wait Tot,Time Days/Date,Bldg Room,Instructor
+3881,LEC 001,UW    U,1,,201,135,126,0,0,10:30-11:20MWF,MC 1085,"Crew,Logan"
+Reserve: Not open to SE students,130,118,,,,
+3882,LEC 002,UW    U,2,,201,135,125,0,0,11:30-12:20MWF,STC 0060,"Nayak,Ashwin"
+Reserve: Not open to SE students,130,115,,,,
+3995,LEC 003,UW    U,3,,201,135,117,0,0,12:30-01:20MWF,STC 0050,"Mandelshtam,Olya"
+Reserve: Not open to SE students,130,109,,,,
+4016,LEC 004,UW    U,4,104,201,135,135,0,0,01:30-02:20MWF,STC 0050,"Stebila,Douglas"
+Reserve: Software Eng students,130,130,,,,
+4017,TUT 104,UW    U,4,,,135,135,0,0,10:30-11:20F,STC 0060
+3887,TUT 101,UW    U,9999,,,135,126,0,0,02:30-03:20W,STC 0060
+3888,TUT 102,UW    U,9999,,,135,125,0,0,04:30-05:20M,STC 0060
+3996,TUT 103,UW    U,9999,,,135,117,0,0,09:30-10:20M,STC 0060
+3901,TST 201,UW    U,9999,,,540,503,0,0,04:30-06:20Th07/06-07/06,
+""

@@ -1,0 +1,13 @@
+Subject,Catalog#,Units,Title
+CS,348,0.5,Intro Database Management
+Class,Comp Sec,Camp Loc,Assoc. Class,Rel 1,Rel 2,Enrl Cap,Enrl Tot,Wait Cap,Wait Tot,Time Days/Date,Bldg Room,Instructor
+3853,LEC 001,UW    U,1,101,,80,32,0,0,04:00-05:20TTh,MC 2038,"Toman,David"
+Reserve: Not open to SE students,74,29,,,,
+4089,LEC 002,UW    U,2,101,,80,80,0,0,01:00-02:20TTh,MC 2035,"Maiyya,Sujaya"
+Reserve: Not open to SE students,74,73,,,,
+4223,LEC 003,UW    U,3,101,,140,131,0,0,02:30-03:50TTh,STC 0040,"Toman,David"
+Reserve: Software Eng students,140,126,,,,
+5401,LEC 004,UW    U,4,101,,80,80,0,0,10:00-11:20TTh,MC 4059,"Maiyya,Sujaya"
+Reserve: Not open to SE students,73,72,,,,
+4344,TST 101,UW    U,9999,,,380,323,0,0,07:00-08:50M06/26-06/26,,"Davies,Sylvie Lynne"
+""

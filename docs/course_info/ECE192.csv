@@ -1,0 +1,20 @@
+Subject,Catalog#,Units,Title
+ECE,192,0.25,Eng Economics & Society Impact
+Notes: LECs 001 and 002: Choose TUT with same Associated Class number as primary meet for Related 1.
+Class,Comp Sec,Camp Loc,Assoc. Class,Rel 1,Rel 2,Enrl Cap,Enrl Tot,Wait Cap,Wait Tot,Time Days/Date,Bldg Room,Instructor
+3374,LEC 001,UW    U,1,,,144,118,0,0,03:30-04:20TW05/09-05/17,E7 5343,"Calero,Ivan"
+Reserve: COMPE or ELE Yr 1 students,144,61,,,03:30-04:20TW05/30-06/07,E7 5343,"Calero,Ivan"
+,,,,,,,,,,03:30-04:20TW06/27-07/26,E7 5343,"Calero,Ivan"
+3376,TUT 101,UW    U,1,,,48,36,0,0,10:30-11:20M,E7 4053
+3377,TUT 102,UW    U,1,,,48,41,0,0,10:30-11:20M,E7 4053
+3378,TUT 103,UW    U,1,,,48,41,0,0,10:30-11:20M,E7 4053
+3375,LEC 002,UW    U,2,,,144,128,0,0,11:30-12:20TW05/09-05/17,E7 5343,"Calero,Ivan"
+Reserve: COMPE or ELE Yr 1 students,144,36,,,11:30-12:20TW05/30-06/07,E7 5343,"Calero,Ivan"
+,,,,,,,,,,11:30-12:20TW06/27-07/26,E7 5343,"Calero,Ivan"
+3379,TUT 104,UW    U,2,,,48,42,0,0,01:30-02:20M,E7 4053
+3380,TUT 105,UW    U,2,,,48,42,0,0,01:30-02:20M,E7 4053
+3381,TUT 106,UW    U,2,,,48,44,0,0,01:30-02:20M,E7 4053
+3579,LEC 003,UW    U,3,107,,135,123,0,0,12:30-01:20MW,STC 0010,"Peralta Moarry,Dario"
+Reserve: Software Eng students,135,121,,,,
+3580,TUT 107,UW    U,3,,,135,123,0,0,12:30-01:20F,STC 0040,"Peralta Moarry,Dario"
+""
