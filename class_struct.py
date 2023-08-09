@@ -128,7 +128,7 @@ class Session:
     #     print(f"Instructor: {self.instructor}")
 
     def __str__(self):
-        print_str = f"Class Code: {self.class_code}\t Section: {self.section}\t Catagory: {self.category}\t Enrolment Capacity: {self.capacity}\t Enrolment Total: {self.current}\t Waitlist Capacity: {self.waitcap}\t Waitlist Total: {self.waittotal}\t "
+        print_str = f"Course Name: {self.course_name}\t Class Code: {self.class_code}\t Section: {self.section}\t Category: {self.category}\t Enrolment Capacity: {self.capacity}\t Enrolment Total: {self.current}\t Waitlist Capacity: {self.waitcap}\t Waitlist Total: {self.waittotal}\t "
         if (self.start_date != ""):
             print_str += f"Time Days: ({self.start_time[0]}{self.start_time[1]}-{self.end_time[0]}{self.end_time[1]}) {self.days} {self.start_date}-{self.end_date}\t "
         else:

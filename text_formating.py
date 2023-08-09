@@ -1,11 +1,11 @@
 import csv
 from class_struct import Course, Session
 
-courses = []    # List of courses
+# courses = []    # List of courses
 
 # Format the course info and save to a txt file
-def format_course_info(course_num):
-    csv_file = "docs/course_info/" + str(course_num) + ".csv"
+def format_course_info(course_code, courses):
+    csv_file = "docs/course_info/" + str(course_code) + ".csv"
     formatted_info = []
 
     with open(csv_file, newline='') as file:
@@ -22,7 +22,7 @@ def format_course_info(course_num):
                 if subject and catalog and title:
                     course_name = f"{subject}{catalog}"
                     course_title = title
-                    curr_course = Course(course_name, course_num, course_title, [])
+                    curr_course = Course(subject, catalog, course_title, [])
                     courses.append(curr_course)
                     break
 
@@ -37,7 +37,8 @@ def format_course_info(course_num):
             if len(row) < 12 or not row[0].isdigit():
                 continue
             class_session_info = (
-                f"[{row[0]}]".ljust(10)
+                f"[{course_name}]".ljust(10)
+                + f"[{row[0]}]".ljust(10)
                 + f"{row[1]}".ljust(10)
                 + f"({row[2]})".ljust(20)
                 + f"Enrolment Capacity: {row[6]}".ljust(30)
@@ -57,8 +58,8 @@ def format_course_info(course_num):
             
             formatted_info.append(class_session_info)
 
-    # write to str(course_num) + ".txt" file
-    with open("docs/course_info/" + str(course_num) + ".txt", "w") as f:
+    # write to str(course_code) + ".txt" file
+    with open("docs/course_info/" + str(course_code) + ".txt", "w") as f:
         f.write("\n".join(formatted_info))
         # DEBUGGER
-        print(f"Formatted course info written to docs/course_info/{course_num}.txt.")
+        print(f"Formatted course info written to docs/course_info/{course_code}.txt.")

@@ -1,7 +1,8 @@
 from class_struct import Course, Session
 from web_scraping import getCourseInfo_WebDriver, getCourseInfo_Requests
-from text_formating import format_course_info, courses
+from text_formating import format_course_info
 from chatgpt import chat_with_gpt, gpt_generate_schedule, gpt_convert_to_calendar_format
+from matching import is_overlapping, add_courses_to_schedule, print_schedule, print_schedule_list
 import re
 
 
@@ -15,24 +16,25 @@ course_list = ['CS240', 'CS247', 'MATH239', 'CS348', 'CO250', 'ECE192']
 #===================================================================================================
 
 # STEP 1: For each course, get the course info and save to a csv file, then format the info and save to a txt file
+courses = []
 for course in course_list:
     course_code = re.findall('[A-Z]+', course)
     course_number = re.findall('[0-9]+', course)
     getCourseInfo_Requests(term, course_code[0], course_number[0])
-    format_course_info(course)
+    format_course_info(course, courses)
 
 # DEBUGGER
-for course in courses:
-    print(course)
-    print("\n")
+# for course in courses:
+#     print(course)
+#     print("\n")
 
 
 # STEP 2: Combine all the course info into one txt file
-with open('docs/course_info/all_courses_info.txt', 'w') as outfile:
-    for course in course_list:
-        with open("docs/course_info/" + course + '.txt') as infile:
-            outfile.write(infile.read())
-            outfile.write('\n\n')
+# with open('docs/course_info/all_courses_info.txt', 'w') as outfile:
+#     for course in course_list:
+#         with open("docs/course_info/" + course + '.txt') as infile:
+#             outfile.write(infile.read())
+#             outfile.write('\n\n')
 
 
 
@@ -44,6 +46,44 @@ with open('docs/course_info/all_courses_info.txt', 'w') as outfile:
 
 # Chat with GPT to adjust the schedule
 # chat_with_gpt(messages)
+
+
+
+
+courses_dict = {}   # {<course name> : {'LEC': <list of sessions>, 'TST': <list of sessions>, 'LAB': <list of sessions>, 'TUT': <list of sessions>}}
+
+for course in courses:
+        courses_dict[course.course_name] = {'LEC': [], 'TST': [], 'LAB': [], 'TUT': []}
+        for session in course.class_sessions:
+            courses_dict[course.course_name][session.category].append(session)
+
+
+
+# # DEBUGGER
+# def print_courses_dict():
+#     print("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< PRINTING COURSES_DICT: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+#     for course in courses_dict:
+#         print(f"Course: {course}")
+#         for category in courses_dict[course]:
+#             print(f"Category: {category}")
+#             for session in courses_dict[course][category]:
+#                 print(session)
+#         print("\n\n")
+
+# # DEBUGGER
+# print_courses_dict()
+
+
+
+
+schedule_list = [[]]
+
+result_schedule_list = add_courses_to_schedule(schedule_list, course_list, courses_dict)
+
+
+#print_schedule_list(result_schedule_list)
+print(len(result_schedule_list))
+print(len(schedule_list))
 
 
 
