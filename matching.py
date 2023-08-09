@@ -120,3 +120,59 @@ def add_courses_to_schedule(schedule_list, to_be_scheduled_course_names, courses
     return schedule_list
 
 
+def convert_session_list_to_schedule(session_list):
+    schedule = {'Monday': [], 'Tuesday': [], 'Wednesday': [], 'Thursday': [], 'Friday': []}
+    for session in session_list:
+        for day in session.days:
+            if day == 'M':
+                schedule['Monday'].append(session)
+            elif day == 'T':
+                schedule['Tuesday'].append(session)
+            elif day == 'W':
+                schedule['Wednesday'].append(session)
+            elif day == 'Th':
+                schedule['Thursday'].append(session)
+            elif day == 'F':
+                schedule['Friday'].append(session)
+
+    for day in schedule:
+        schedule[day].sort(key=lambda x: x.start_time)
+
+    return schedule
+
+
+def print_calendar_schedule(schedule):
+    print("\033[33m===================================================================================================\033[0m")
+    for day in schedule:
+        print("\033[33m{}\033[0m".format(day))
+        for session in schedule[day]:
+            print(session)
+        print()
+    print("\033[33m===================================================================================================\033[0m")
+
+
+def print_calendar_schedule_simplified(schedule):
+    print("\033[33m===================================================================================================\033[0m")
+    for day in schedule:
+        print("\033[33m{}\033[0m".format(day))
+        for session in schedule[day]:
+            s = "\033[0m" + (session.course_name).ljust(10) \
+            + ("[" + session.class_code + "]").ljust(8) \
+            + (session.section).ljust(10) \
+            + (str(session.start_time[0]) + " " + str(session.start_time[1]) \
+            + " - " \
+            + str(session.end_time[0]) + " " + str(session.end_time[1])).ljust(22) \
+            + (str(session.days)).ljust(20)
+
+            if session.start_date != "" and session.end_date != "":
+                s += (str(session.start_date) + " - " + str(session.end_date)).ljust(18)
+            else:
+                s += "".ljust(15)
+
+
+            s += (session.room).ljust(10) + session.instructor
+
+
+            print(s)
+        print()
+    print("\033[33m===================================================================================================\033[0m")

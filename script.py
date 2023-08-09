@@ -2,7 +2,7 @@ from class_struct import Course, Session
 from web_scraping import getCourseInfo_WebDriver, getCourseInfo_Requests
 from text_formating import format_course_info
 from chatgpt import chat_with_gpt, gpt_generate_schedule, gpt_convert_to_calendar_format
-from matching import is_overlapping, add_courses_to_schedule, print_schedule, print_schedule_list
+from matching import is_overlapping, add_courses_to_schedule, print_schedule, print_schedule_list, convert_session_list_to_schedule, print_calendar_schedule, print_calendar_schedule_simplified
 import re
 
 
@@ -89,7 +89,11 @@ print(len(schedule_list))
 
 
 
-
+# Convert schedule to calendar format
+for schedule in result_schedule_list:
+    converted_schedule = convert_session_list_to_schedule(schedule)
+    #print_calendar_schedule(converted_schedule)
+    print_calendar_schedule_simplified(converted_schedule)
 
 
 
