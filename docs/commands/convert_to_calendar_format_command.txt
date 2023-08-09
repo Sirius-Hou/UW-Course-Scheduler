@@ -1,0 +1,1 @@
+Convert this schedule and display in calendar format. Separate by days. (Note for day representation: M-Monday, T-Tuesday, W-Wednesday, Th-Thursday, F-Friday)

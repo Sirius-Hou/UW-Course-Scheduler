@@ -1,0 +1,3 @@
+I want to enroll in a few courses for the next term. I have a list of information of each course along with different session details and time slots for selection.
+Please help me select the best schedule that avoids time conflicts. Ensure that I must have one and ONLY one LEC session, one TST session, and one LAB or TUT session (if there are any) for each course.
+Here is the course info:

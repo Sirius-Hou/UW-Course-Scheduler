@@ -1,0 +1,31 @@
+Based on the information provided, here is a schedule that avoids time conflicts for each course:
+
+CS240:
+- LEC 001: 01:00-02:20 TTh (STC 0060)
+- TUT 101: 10:30-11:20 M (STC 0010)
+
+CS247:
+- LEC 001: 10:00-11:20 TTh (STC 0050)
+- TUT 101: 10:30-11:20 W (STC 0010)
+
+MATH239:
+- LEC 001: 10:30-11:20 MWF (MC 1085)
+- TUT 101: 02:30-03:20 W (STC 0060)
+- TUT 102: 04:30-05:20 M (STC 0060)
+
+CS348:
+- LEC 001: 04:00-05:20 TTh (MC 2038)
+- LEC 002: 01:00-02:20 TTh (MC 2035)
+
+CO250:
+- LEC 001: 11:30-12:50 MW (MC 4020)
+- LEC 002: 11:30-12:50 TTh (MC 4059)
+- LEC 003: 01:00-02:20 MW (MC 4061)
+- TUT 101: 12:30-01:20 F (STC 1012)
+
+ECE192:
+- LEC 001: 03:30-04:20 TW (E7 5343)
+- TUT 101: 10:30-11:20 M (E7 4053)
+- TUT 103: 01:30-02:20 M (E7 4053)
+
+Please note that this schedule assumes you are taking all the listed sections for each course. Adjustments can be made based on your preferences and availability.
