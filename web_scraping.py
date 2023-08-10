@@ -9,7 +9,7 @@ import csv
 ### METHOD 1: Use Selenium to scrape the data ###
 
 # Set up the Selenium WebDriver
-def getCourseInfo_WebDriver(term=1239, subject="CS", course_number=136):
+def get_course_info_WebDriver(term=1239, subject="CS", course_number=136):
     # Set up the Selenium WebDriver
     driver = webdriver.Chrome()
 
@@ -55,7 +55,7 @@ def getCourseInfo_WebDriver(term=1239, subject="CS", course_number=136):
 
 
 ### METHOD 2: Use Requests to scrape the data ### (PREFERED)
-def getCourseInfo_Requests(term=1239, subject="CS", course_number=136):
+def get_course_info_Requests(term=1239, subject="CS", course_number="136"):
     # Set up the request
     url = "https://info.uwaterloo.ca/cgi-bin/cgiwrap/infocour/salook.pl"
     payload = {'sess': int(term), 'level': 'under', 'subject': subject, 'cournum': int(course_number)}
@@ -84,3 +84,6 @@ def getCourseInfo_Requests(term=1239, subject="CS", course_number=136):
                     writer.writerow(cols)
     # DEBUGGER
     print(f"{subject}{course_number} info saved to docs/course_info/{subject}{course_number}.csv")
+
+
+

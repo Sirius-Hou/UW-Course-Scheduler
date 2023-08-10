@@ -4,7 +4,8 @@ from class_struct import Course, Session
 # courses = []    # List of courses
 
 # Format the course info and save to a txt file
-def format_course_info(course_code, courses):
+def format_course_info(course_code):
+    result = None
     csv_file = "docs/course_info/" + str(course_code) + ".csv"
     formatted_info = []
 
@@ -23,7 +24,7 @@ def format_course_info(course_code, courses):
                     course_name = f"{subject}{catalog}"
                     course_title = title
                     curr_course = Course(subject, catalog, course_title, [])
-                    courses.append(curr_course)
+                    result = curr_course
                     break
 
         if course_name and course_title:
@@ -63,3 +64,5 @@ def format_course_info(course_code, courses):
         f.write("\n".join(formatted_info))
         # DEBUGGER
         print(f"Formatted course info written to docs/course_info/{course_code}.txt.")
+    
+    return result

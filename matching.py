@@ -1,6 +1,6 @@
 from class_struct import *
 
-
+ONLY_ADD_UNFILLED_SESSIONS = False
 
 
 
@@ -53,14 +53,7 @@ def print_schedule_list(schedule_list):
 def add_sessions_to_schedule(curr_schedule, new_schedule_list, curr_course, to_be_scheduled_sessions, courses_dict):
     # base case: all sessions have been scheduled
     if len(to_be_scheduled_sessions) == 0:
-        #print_schedule(curr_schedule)
-        # print("ADDED A NEW COURSE SCHEDULE: ")
-        # print(curr_course)
         new_schedule_list.append(curr_schedule.copy())
-        # print("PRINTING curr_schedule:")
-        # print_schedule(curr_schedule)
-        # print("PRINTING new_schedule_list:")
-        # print_schedule(new_schedule_list)
         return None
 
     # recursive case: add a session to the schedule
@@ -73,12 +66,15 @@ def add_sessions_to_schedule(curr_schedule, new_schedule_list, curr_course, to_b
         return None
 
     for session in courses_dict[curr_course][curr_session]:
+        # Check if session is full
+        if ONLY_ADD_UNFILLED_SESSIONS:
+            if session.capacity.isdigit() and session.current.isdigit() and session and int(session.capacity) <= int(session.current):
+                continue
+
         # Check if session overlaps with any of the sessions in the current schedule
         overlapping = False
         for scheduled_session in curr_schedule:
             if is_overlapping(session, scheduled_session):
-                # print("SESSION OVERLAPS: " + session.classCode + " " + session.section + " " + session.category)
-                # print("WITH: " + scheduled_session.classCode + " " + scheduled_session.section + " " + scheduled_session.category)
                 overlapping = True
                 break
 
@@ -142,17 +138,17 @@ def convert_session_list_to_schedule(session_list):
 
 
 def print_calendar_schedule(schedule):
-    print("\033[33m===================================================================================================\033[0m")
+    print("\033[33m===============================================================================================================================\033[0m")
     for day in schedule:
         print("\033[33m{}\033[0m".format(day))
         for session in schedule[day]:
             print(session)
         print()
-    print("\033[33m===================================================================================================\033[0m")
+    print("\033[33m===============================================================================================================================\033[0m")
 
 
 def print_calendar_schedule_simplified(schedule):
-    print("\033[33m===================================================================================================\033[0m")
+    print("\033[33m===============================================================================================================================\033[0m")
     for day in schedule:
         print("\033[33m{}\033[0m".format(day))
         for session in schedule[day]:
@@ -175,4 +171,31 @@ def print_calendar_schedule_simplified(schedule):
 
             print(s)
         print()
-    print("\033[33m===================================================================================================\033[0m")
+    print("\033[33m===============================================================================================================================\033[0m")
+
+
+
+def print_calendar_schedule_simplified_to_file(schedule, file):
+    file.write("===============================================================================================================================\n")
+    for day in schedule:
+        file.write("{}\n".format(day))
+        for session in schedule[day]:
+            s = (session.course_name).ljust(10) \
+            + ("[" + session.class_code + "]").ljust(8) \
+            + (session.section).ljust(10) \
+            + (str(session.start_time[0]) + " " + str(session.start_time[1]) \
+            + " - " \
+            + str(session.end_time[0]) + " " + str(session.end_time[1])).ljust(22) \
+            + (str(session.days)).ljust(20)
+
+            if session.start_date != "" and session.end_date != "":
+                s += (str(session.start_date) + " - " + str(session.end_date)).ljust(18)
+            else:
+                s += "".ljust(15)
+
+
+            s += (session.room).ljust(10) + session.instructor
+
+            file.write(s + "\n\n")
+    file.write("===============================================================================================================================\n\n")
+

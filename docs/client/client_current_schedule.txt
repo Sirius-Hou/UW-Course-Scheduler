@@ -1,0 +1,140 @@
+	
+Sirius Hou
+My Academics
+Course Selection (Undergrad only)
+Search for Classes
+Enroll
+ 	My Class Schedule	 	 	|	 	 	Shopping Cart	 	 	|	 	 	Add	 	 	|	 	 	Drop	 	 	|	 	 	Swap	 	 	|	 	 	Edit	 	 	|	 	 	Term Information	 	 	|	 	 	Exam Information	 
+My Class Schedule
+List View
+Weekly Calendar View
+Select Display Option
+L
+Fall 2023 | Undergraduate | University of Waterloo
+Group Box
+Collapse section Class Schedule Filter Options Class Schedule Filter Options 
+Show Enrolled Classes
+Show Dropped Classes
+Show Waitlisted Classes
+CS 341 - Algorithms
+Status	Units	Grading	Deadlines
+Enrolled
+0.50
+Numeric Grading Basis
+Academic Calendar Deadlines
+Class Nbr	Section	Component	Days & Times	Room	Instructor	Start/End Date
+6021
+103	
+LAB
+F 1:30PM - 2:20PM
+MC 4020
+Staff
+2023/09/06 - 2023/12/05
+6888
+003	
+LEC
+TTh 1:00PM - 2:20PM
+MC 2035
+Trevor Brown
+2023/09/06 - 2023/12/05
+6893
+201	
+TST
+F 4:30PM - 6:00PM
+TBA
+Sylvie Davies
+2023/10/20 - 2023/10/20
+CS 346 - Application Development
+Status	Units	Grading	Deadlines
+Enrolled
+0.50
+Numeric Grading Basis
+Academic Calendar Deadlines
+Class Nbr	Section	Component	Days & Times	Room	Instructor	Start/End Date
+6905
+002	
+LEC
+W 2:30PM - 4:20PM
+MC 2035
+Caroline Kierstead,
+Jeffery Avery
+2023/09/06 - 2023/12/05
+6907
+102	
+LAB
+F 2:30PM - 4:20PM
+MC 2035
+Jeffery Avery
+2023/09/06 - 2023/12/05
+CS 350 - Operating Systems
+Status	Units	Grading	Deadlines
+Enrolled
+0.50
+Numeric Grading Basis
+Academic Calendar Deadlines
+Class Nbr	Section	Component	Days & Times	Room	Instructor	Start/End Date
+6958
+101	
+TST
+W 7:00PM - 8:50PM
+TBA
+Olga Zorin
+2023/11/01 - 2023/11/01
+6359
+003	
+LEC
+TTh 10:00AM - 11:20AM
+AL 211
+Kevin Lanctot
+2023/09/06 - 2023/12/05
+ECON 371 - Business Finance 1
+Status	Units	Grading	Deadlines
+Enrolled
+0.50
+Numeric Grading Basis
+Academic Calendar Deadlines
+Class Nbr	Section	Component	Days & Times	Room	Instructor	Start/End Date
+4127
+002	
+LEC
+Th 6:30PM - 9:20PM
+AL 208
+Arash Soleimani Dahaj
+2023/09/06 - 2023/12/05
+STAT 231 - Statistics
+Status	Units	Grading	Deadlines
+Enrolled
+0.50
+Numeric Grading Basis
+Academic Calendar Deadlines
+Class Nbr	Section	Component	Days & Times	Room	Instructor	Start/End Date
+6433
+102	
+TUT
+F 12:30PM - 1:20PM
+AL 113
+Michael Wallace
+2023/09/06 - 2023/12/05
+6879
+002	
+LEC
+MW 11:30AM - 12:50PM
+AL 113
+Michael Wallace
+2023/09/06 - 2023/12/05
+6885
+201	
+TST
+T 4:30PM - 5:50PM
+TBA
+Staff
+2023/10/03 - 2023/10/03
+ 
+ 	
+ 
+T 4:30PM - 5:50PM
+TBA
+Staff
+2023/11/14 - 2023/11/14
+Printer Friendly Page
+Go to top iconGo to top
