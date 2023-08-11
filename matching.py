@@ -1,3 +1,4 @@
+import global_variables
 from class_struct import *
 
 ONLY_ADD_UNFILLED_SESSIONS = False
@@ -91,7 +92,7 @@ def add_sessions_to_schedule(curr_schedule, new_schedule_list, curr_course, to_b
 # use backtracking to generate all possible schedules
 # schedule_list: list of schedules (Format: [list of [list of Session]])
 # to_be_scheduled_course_names: list of course names to be scheduled
-def add_courses_to_schedule(schedule_list, to_be_scheduled_course_names, courses_dict):
+def add_courses_to_schedule(schedule_list, to_be_scheduled_course_names):
     for course in to_be_scheduled_course_names:
         new_schedule_list = []
         for curr_schedule in schedule_list:
@@ -101,7 +102,7 @@ def add_courses_to_schedule(schedule_list, to_be_scheduled_course_names, courses
             # print("CURRENT OLD SCHEDULE TO BE ADDED ON:")
             # print_schedule(curr_schedule)
 
-            add_sessions_to_schedule(curr_schedule, new_schedule_list, course, ["TST", "LEC", "LAB", "TUT"], courses_dict)
+            add_sessions_to_schedule(curr_schedule, new_schedule_list, course, ["TST", "LEC", "LAB", "TUT"], global_variables.courses_dict)
             # print("AFTER ADDING SESSIONS: (printing new_schedule_list))")
             # print_schedule_list(new_schedule_list)
 

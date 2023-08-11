@@ -58,7 +58,7 @@ def get_course_info_WebDriver(term=1239, subject="CS", course_number=136):
 def get_course_info_Requests(term=1239, subject="CS", course_number="136"):
     # Set up the request
     url = "https://info.uwaterloo.ca/cgi-bin/cgiwrap/infocour/salook.pl"
-    payload = {'sess': int(term), 'level': 'under', 'subject': subject, 'cournum': int(course_number)}
+    payload = {'sess': int(term), 'level': 'under', 'subject': subject, 'cournum': course_number}
     r = requests.get(url, params=payload).text
     soup = BeautifulSoup(r, 'html.parser')
     main_table = soup.find('table', border=2)

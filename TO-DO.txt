@@ -1,0 +1,20 @@
+* 从RateMyProfessor或UW Flow上爬取教授评分&评论，存在一个dictionary里，用pickle library将这个dict存在data/prof_info.pickle文件中
+
+* 根据用户当前的课表，从all_generated_schedules中筛选出相近的课表
+
+* 根据用户的需求 （例如，更喜欢早上/下午/晚上的课，更喜欢某个/rating高的教授的课，更喜欢/不喜欢连着的session，能接受最长连续上多久课）筛选出满足条件的课表
+
+* 指导用户如何从其当前课表调整到选定的课表
+
+
+
+
+
+* 根据用户从Quest上复制粘贴的课表（list格式），爬取当前已enroll的course code (e.g. EMLS101R (一定是全名称，区分大小写，中间无空格 （无效格式示例：EMLS101r, emls101r, EMLS101, EMLS 101R))
+(注：目前依靠人工手动输入course name以及session code （示例见：参照script.py开头的global_variables.client_schedule）)
+
+
+
+
+
+
