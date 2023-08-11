@@ -1,4 +1,5 @@
 import re
+from matching import print_calendar_schedule, print_calendar_schedule_simplified, convert_session_list_to_schedule
 
 def convert_time(start_time, end_time, return_24h_format=True):
     # Convert start time to 24-hour format
@@ -81,12 +82,6 @@ class Course:
     
     def add_session(self, class_session):
         self.class_sessions.append(class_session)
-
-    # def print_course(self):
-    #     print(f"Course Code: {self.course_code}")
-    #     print(f"Course Number: {self.course_number}")
-    #     print(f"Course Title: {self.course_title}")
-    #     print(f"Class Sessions: {self.class_sessions}")
     
     def __str__(self):
         session_str = "\n".join(str(session) for session in self.class_sessions)
@@ -112,20 +107,6 @@ class Session:
         self.room = room
         self.instructor = instructor
     
-    # def print_session(self):
-    #     print(f"Class Code: {self.class_code}")
-    #     print(f"Section: {self.section}")
-    #     print(f"Enrolment Capacity: {self.capacity}")
-    #     print(f"Enrolment Total: {self.current}")
-    #     print(f"Waitlist Capacity: {self.waitcap}")
-    #     print(f"Waitlist Total: {self.waittotal}")
-    #     if (self.start_date != ""):
-    #         print(f"Time Days: ({self.start_time[0]}{self.start_time[1]}-{self.end_time[0]}{self.end_time[1]}) {self.days} {self.start_date}-{self.end_date}")
-    #     else:
-    #         print(f"Time Days: ({self.start_time[0]}{self.start_time[1]}-{self.end_time[0]}{self.end_time[1]}) {self.days}")
-
-    #     print(f"Room: {self.room}")
-    #     print(f"Instructor: {self.instructor}")
 
     def __str__(self):
         print_str = f"Course Name: {self.course_name}\t Class Code: {self.class_code}\t Section: {self.section}\t Category: {self.category}\t Enrolment Capacity: {self.capacity}\t Enrolment Total: {self.current}\t Waitlist Capacity: {self.waitcap}\t Waitlist Total: {self.waittotal}\t "
@@ -135,3 +116,33 @@ class Session:
             print_str += f"Time Days: ({self.start_time[0]}{self.start_time[1]}-{self.end_time[0]}{self.end_time[1]}) {self.days}\t "
         print_str += f"Room: {self.room}\t Instructor: {self.instructor}"
         return print_str
+    
+
+
+class Schedule:
+    def __init__(self, sessions=[], diff_degree=-1, instructions=[]):
+        self.sessions = sessions
+        self.diff_degree = diff_degree
+        self.instructions = instructions
+    
+    def print_schedule(self):
+        print("Printing Schedule:")
+        for session in self.sessions:
+            print(session)
+        print(f"diff_degree: {self.diff_degree}")
+        print("Instructions:")
+        print("\n".join(self.instructions))
+    
+    def print_schedule_calendar_format(self, simplified=False, show_instructions=False):
+        print("Printing Schedule:")
+        result = convert_session_list_to_schedule(self.sessions)
+        if simplified:
+            print_calendar_schedule_simplified(result)
+        else:
+            print_calendar_schedule(result)
+        print(f"diff_degree: {self.diff_degree}")
+        if show_instructions:
+            print("Instructions:")
+            print("\n".join(self.instructions))
+
+        

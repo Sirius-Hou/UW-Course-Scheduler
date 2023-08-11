@@ -6,6 +6,9 @@ course_list = []
 # (e.g. {'CS341' : [6021, 6888, 6893], 'CS346' : [6905, 6907]})
 client_schedule = []
 
+# client_session_list: [list of sessions that the client has selected]
+client_session_list = []
+
 # courses: [list of Course objects (with names listed in course_list)]
 courses = []
 
@@ -15,5 +18,5 @@ courses_dict = {}
 # all_generated_schedules: [list of generated schedules]
 all_generated_schedules = []
 
-# client_session_list: [list of sessions that the client has selected]
-client_session_list = []
+# schedule_list_sorted: [list of schedule objects sorted by diff_degree from the client schedule]
+schedule_list_sorted = []

@@ -1,5 +1,13 @@
-Course Name: ENGL210H	 (Arts Writing)
-[ENGL210H][3278]    LEC 001   (STJ   J)           Enrolment Capacity: 40        Enrolment Total: 17           Waitinglist Capacity: 0       Waitinglist Total: 0          Schedule: 07:00-09:50M                       Room: SJ2 2007                     Instructor: Challen,Paul           
+Course Name: CS341	 (Algorithms)
+[CS341]   [6097]    LEC 001   (UW    U)           Enrolment Capacity: 74        Enrolment Total: 70           Waitinglist Capacity: 0       Waitinglist Total: 0          Schedule: 08:30-09:50TTh                     Room: MC 4061                      Instructor: Oliveira,Rafael        
+[CS341]   [6290]    LEC 002   (UW    U)           Enrolment Capacity: 73        Enrolment Total: 73           Waitinglist Capacity: 0       Waitinglist Total: 0          Schedule: 11:30-12:50TTh                     Room: RCH 302                      Instructor: Oliveira,Rafael        
+[CS341]   [6888]    LEC 003   (UW    U)           Enrolment Capacity: 74        Enrolment Total: 76           Waitinglist Capacity: 0       Waitinglist Total: 0          Schedule: 01:00-02:20TTh                     Room: MC 2035                      Instructor: Brown,Trevor           
+[CS341]   [6889]    LEC 004   (UW    U)           Enrolment Capacity: 72        Enrolment Total: 73           Waitinglist Capacity: 0       Waitinglist Total: 0          Schedule: 02:30-03:50TTh                     Room: MC 2035                      Instructor: Brown,Trevor           
+[CS341]   [9181]    LEC 005   (UW    U)           Enrolment Capacity: 72        Enrolment Total: 72           Waitinglist Capacity: 0       Waitinglist Total: 0          Schedule: 02:30-03:50TTh                     Room: AL 208                       Instructor: Oliveira,Rafael        
+[CS341]   [6576]    LAB 101   (UW    U)           Enrolment Capacity: 125       Enrolment Total: 107          Waitinglist Capacity: 0       Waitinglist Total: 0          Schedule: 10:30-11:20F                       Room: MC 4020                      
+[CS341]   [6729]    LAB 102   (UW    U)           Enrolment Capacity: 150       Enrolment Total: 132          Waitinglist Capacity: 0       Waitinglist Total: 0          Schedule: 11:30-12:20F                       Room: STC 0010                     
+[CS341]   [6021]    LAB 103   (UW    U)           Enrolment Capacity: 125       Enrolment Total: 125          Waitinglist Capacity: 0       Waitinglist Total: 0          Schedule: 01:30-02:20F                       Room: MC 4020                      
+[CS341]   [6893]    TST 201   (UW    U)           Enrolment Capacity: 400       Enrolment Total: 364          Waitinglist Capacity: 0       Waitinglist Total: 0          Schedule: 04:30-06:00F10/20-10/20            Room:                              Instructor: Davies,Sylvie Lynne    
 
 Course Name: CS346	 (Application Development)
 [CS346]   [6904]    LEC 001   (UW    U)           Enrolment Capacity: 80        Enrolment Total: 80           Waitinglist Capacity: 0       Waitinglist Total: 0          Schedule: 10:30-12:20W                       Room: MC 2034                      Instructor: Kierstead,Caroline     

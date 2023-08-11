@@ -1,0 +1,84 @@
+Emily Chen
+My Academics
+Course Selection (Undergrad only)
+Search for Classes
+Enroll
+ 	My Class Schedule	 	 	|	 	 	Shopping Cart	 	 	|	 	 	Add	 	 	|	 	 	Drop	 	 	|	 	 	Swap	 	 	|	 	 	Edit	 	 	|	 	 	Term Information	 	 	|	 	 	Exam Information	 
+My Class Schedule
+					
+List View
+Weekly Calendar View
+Select Display Option
+L
+			
+
+Fall 2023 | Undergraduate | University of Waterloo
+
+	
+Group Box
+		
+Collapse section Class Schedule Filter Options Class Schedule Filter Options 
+			
+Show Enrolled Classes
+Show Dropped Classes
+Show Waitlisted Classes
+	
+
+	
+COOP 2 - Co-operative Work Term
+		
+Status	Units	Grading	Deadlines
+Enrolled
+0.50
+Credit/No Credit Co-op
+Academic Calendar Deadlines
+Class Nbr	Section	Component	Days & Times	Room	Instructor	Start/End Date
+7842
+001	
+WRK
+ 
+TBA
+Staff
+06/09/2023 - 05/12/2023
+CS 346 - Application Development
+		
+Status	Units	Grading	Deadlines
+Enrolled
+0.50
+Numeric Grading Basis
+Academic Calendar Deadlines
+Class Nbr	Section	Component	Days & Times	Room	Instructor	Start/End Date
+6904
+001	
+LEC
+W 10:30AM - 12:20PM
+MC 2034
+Caroline Kierstead, 
+Jeffery Avery
+06/09/2023 - 05/12/2023
+6906
+101	
+LAB
+F 10:30AM - 12:20PM
+MC 2034
+Jeffery Avery
+06/09/2023 - 05/12/2023
+PD 10 - Professional Resp in Computing
+		
+Status	Units	Grading	Deadlines
+Enrolled
+0.50
+Credit/No Credit Co-op
+Academic Calendar Deadlines
+Class Nbr	Section	Component	Days & Times	Room	Instructor	Start/End Date
+7919
+081	
+LEC
+ 
+ONLN - Online
+Joanne Atlee
+06/09/2023 - 05/12/2023
+Printer Friendly Page	
+				
+ Go to top iconGo to top
+

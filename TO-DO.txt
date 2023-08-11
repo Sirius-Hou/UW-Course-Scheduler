@@ -14,7 +14,5 @@
 (注：目前依靠人工手动输入course name以及session code （示例见：参照script.py开头的global_variables.client_schedule）)
 
 
-
-
-
-
+* URGENT:
+BUG: 测试get_schedule_convert_instructions函数 （script.py运行后global_variables.schedule_list_sorted中所有Schedule的diff_degree都是11）

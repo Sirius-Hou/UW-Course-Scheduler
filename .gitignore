@@ -1,3 +1,6 @@
 .env
 docs/course_info/*
 !docs/course_info/all_courses_info.txt
+
+docs/client/david.txt
+docs/client/emily.txt

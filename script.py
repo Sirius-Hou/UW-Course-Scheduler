@@ -1,9 +1,9 @@
 import global_variables
-from class_struct import Course, Session
+from class_struct import Course, Session, Schedule
 from web_scraping import get_course_info_Requests
 from text_formating import format_course_info
 from chatgpt import chat_with_gpt, gpt_generate_schedule, gpt_convert_to_calendar_format
-from matching import add_courses_to_schedule, convert_session_list_to_schedule, print_calendar_schedule, print_calendar_schedule_simplified, print_calendar_schedule_simplified_to_file
+from matching import add_courses_to_schedule, convert_session_list_to_schedule, print_calendar_schedule, print_calendar_schedule_simplified, print_calendar_schedule_simplified_to_file, get_schedule_convert_instructions
 from client_requests import get_session_info
 import re
 import pickle
@@ -50,7 +50,7 @@ print("Term & Course List are unchanged: " + str(INPUT_IDENTITY[0]))
 print("Client Schedule is unchanged: " + str(INPUT_IDENTITY[1]))
 
 # DEBUG MODE: MANUAL OVERRIDE, FORCE TO RECALCULATE
-INPUT_IDENTITY = [False, False]
+#INPUT_IDENTITY = [False, False]
 
 
 #=================================================================================================================================
@@ -196,7 +196,8 @@ print(f"Total number of available schedule plans: {len(global_variables.all_gene
 
 
 #=================================================================================================================================
-# Step 6: 
+# Step 6: Get client's current schedule
+print("Acquiring client's current schedule ...")
 
 for client_course_name in global_variables.client_schedule:
     for client_session_number in global_variables.client_schedule[client_course_name]:
@@ -222,23 +223,36 @@ for client_course_name in global_variables.client_schedule:
         #print(result_session)
         global_variables.client_session_list.append(result_session)
 
-client_schedule = convert_session_list_to_schedule(global_variables.client_session_list)
-print("\033[33mYour Current Schedule:\033[0m")
-print_calendar_schedule_simplified(client_schedule)
+global_variables.client_schedule = convert_session_list_to_schedule(global_variables.client_session_list)
+
+# print("\033[33mYour Current Schedule:\033[0m")
+# print_calendar_schedule_simplified(global_variables.client_schedule)
+
+
+
+#=================================================================================================================================
+# Step 7: Sort the generated schedules by similarity to client's current schedule
+print("Sorting the generated schedules by similarity to client's current schedule ...")
+
+from matching import print_schedule
+
+for generated_schedule in global_variables.all_generated_schedules:
+    diff_degree, instructions = get_schedule_convert_instructions(global_variables.client_session_list, generated_schedule)
+    global_variables.schedule_list_sorted.append(Schedule(generated_schedule, diff_degree, instructions))
+    print(diff_degree)
+
+#global_variables.all_generated_schedules = sorted(global_variables.all_generated_schedules, key=lambda schedule: get_schedule_convert_instructions(schedule, global_variables.client_session_list))
+
+
+global_variables.schedule_list_sorted.sort(key=lambda x: x.diff_degree)
+
+# a=global_variables.schedule_list_sorted
+# a[0].print_schedule_calendar_format()
 
 
 
 
-
-
-
-
-
-
-
-
-
-
+# TESTING SECTION (UNUSED)
 
 import datetime
 import icalendar
