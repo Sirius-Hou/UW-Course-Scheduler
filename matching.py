@@ -1,8 +1,14 @@
-import global_variables
-import re
+from public import * # libraries and functions that are used in multiple files
+import global_variables # global variables that are used in multiple files
+
+import class_struct
 
 ONLY_ADD_UNFILLED_SESSIONS = False
 
+
+# compare each session's class_code, section, start_time, end_time, days
+def same_session(session1, session2):
+    return session1.class_code == session2.class_code and session1.section == session2.section and session1.start_time == session2.start_time and session1.end_time == session2.end_time and session1.days == session2.days
 
 
 def is_overlapping(session1, session2):
@@ -31,7 +37,6 @@ def is_overlapping(session1, session2):
 
 # DEBUGGER
 def print_schedule(schedule):
-    print("CURRENT SCHEDULE:")
     #print("===================================================================================================")
     for session in schedule:
         print(session)
@@ -101,111 +106,8 @@ def add_courses_to_schedule(schedule_list, to_be_scheduled_course_names):
     return schedule_list
 
 
-def convert_session_list_to_schedule(session_list):
-    schedule = {'Monday': [], 'Tuesday': [], 'Wednesday': [], 'Thursday': [], 'Friday': []}
-    for session in session_list:
-        for day in session.days:
-            if day == 'M':
-                schedule['Monday'].append(session)
-            elif day == 'T':
-                schedule['Tuesday'].append(session)
-            elif day == 'W':
-                schedule['Wednesday'].append(session)
-            elif day == 'Th':
-                schedule['Thursday'].append(session)
-            elif day == 'F':
-                schedule['Friday'].append(session)
-
-    for day in schedule:
-        schedule[day].sort(key=lambda x: x.start_time)
-
-    return schedule
-
-
-def print_calendar_schedule(schedule):
-    print("\033[33m===============================================================================================================================\033[0m")
-    for day in schedule:
-        print("\033[33m{}\033[0m".format(day))
-        for session in schedule[day]:
-            print(session)
-        print()
-    print("\033[33m===============================================================================================================================\033[0m")
-
-
-def print_calendar_schedule_simplified(schedule):
-    print("\033[33m===============================================================================================================================\033[0m")
-    for day in schedule:
-        print("\033[33m{}\033[0m".format(day))
-        for session in schedule[day]:
-            s = "\033[0m" + (session.course_name).ljust(10) \
-            + ("[" + session.class_code + "]").ljust(8) \
-            + (session.section).ljust(10) \
-            + (str(session.start_time[0]) + " " + str(session.start_time[1]) \
-            + " - " \
-            + str(session.end_time[0]) + " " + str(session.end_time[1])).ljust(22) \
-            + (str(session.days)).ljust(20)
-
-            if session.start_date != "" and session.end_date != "":
-                s += (str(session.start_date) + " - " + str(session.end_date)).ljust(18)
-            else:
-                s += "".ljust(15)
-
-
-            s += (session.room).ljust(10) + session.instructor
-
-
-            print(s)
-        print()
-    print("\033[33m===============================================================================================================================\033[0m")
-
-
-
-def print_calendar_schedule_simplified_to_file(schedule, file):
-    file.write("===============================================================================================================================\n")
-    for day in schedule:
-        file.write("{}\n".format(day))
-        for session in schedule[day]:
-            s = (session.course_name).ljust(10) \
-            + ("[" + session.class_code + "]").ljust(8) \
-            + (session.section).ljust(10) \
-            + (str(session.start_time[0]) + " " + str(session.start_time[1]) \
-            + " - " \
-            + str(session.end_time[0]) + " " + str(session.end_time[1])).ljust(22) \
-            + (str(session.days)).ljust(20)
-
-            if session.start_date != "" and session.end_date != "":
-                s += (str(session.start_date) + " - " + str(session.end_date)).ljust(18)
-            else:
-                s += "".ljust(15)
-
-
-            s += (session.room).ljust(10) + session.instructor
-
-            file.write(s + "\n\n")
-    file.write("===============================================================================================================================\n\n")
-
-
-
-def print_dict(schedule_dict_categorized):
-    for course in schedule_dict_categorized:
-        for category in schedule_dict_categorized[course]:
-            print(course, category, schedule_dict_categorized[course][category])
-    print("\n\n")
-
-
-
+# current_schedule, target_schedule: both are lists of selected sessions
 def get_schedule_convert_instructions(current_schedule, target_schedule):
-    """
-    Gets the instructions required to convert from a current schedule to a target schedule.
-
-    Parameters:
-        current_schedule (Schedule): The current schedule.
-        target_schedule (Schedule): The target schedule.
-        schedule_diff_set (Set): The set of sessions that need to be added or removed from the current schedule to get to the target schedule.
-
-    Returns:
-        A list of instructions to convert from the current schedule to the target schedule.
-    """
     current_schedule_dict = {}
     for session in current_schedule:
         if session.course_name not in current_schedule_dict:
@@ -229,9 +131,6 @@ def get_schedule_convert_instructions(current_schedule, target_schedule):
     #     print("Course: " + course)
     #     for session in target_schedule_dict[course]:
     #         print(session)
-
-
-
     
     instructions = []
     diff_degree = 0
@@ -240,7 +139,11 @@ def get_schedule_convert_instructions(current_schedule, target_schedule):
     # This action is called "Dropping a course" (counted as 1 step).
     for course in current_schedule_dict.copy():
         if course not in target_schedule_dict:
-            instructions.append("DROP Course" + course)
+            msg = "DROP Course: " + course + "\nSessions:\n"
+            for session in current_schedule_dict[course]:
+                msg += session.print_session_simplified() + "\n"
+                
+            instructions.append(msg)
             del current_schedule_dict[course]
             diff_degree += 1
     
@@ -248,104 +151,39 @@ def get_schedule_convert_instructions(current_schedule, target_schedule):
     # This action is called "Adding a course" (counted as 1 step).
     for course in target_schedule_dict.copy():
         if course not in current_schedule_dict:
-            instructions.append("ADD Course: " + course)
+            msg = "ADD Course: " + course + "\nSessions:\n"
+            for session in target_schedule_dict[course]:
+                msg += session.print_session_simplified() + "\n"
+
+            instructions.append(msg)
             del target_schedule_dict[course]
             diff_degree += 1
 
-
-
-    # print("Printing current schedule dict AFTER DELETION:")
-    # for course in current_schedule_dict:
-    #     print("Course: " + course)
-    #     for session in current_schedule_dict[course]:
-    #         print(session)
-    
-    # print("\n")
-
-    # print("Printing target schedule dict AFTER DELETION:")
-    # for course in target_schedule_dict:
-    #     print("Course: " + course)
-    #     for session in target_schedule_dict[course]:
-    #         print(session)
-
-    # print("\n")
-    
-
-
-    
     # If a course is in both schedules, compare the sessions.
     # Compare each of the TST, LEC, TUT, LAB sessions.
 
     # Remove sessions that are in both schedules
+    # (Note: use same_session(session1, session2) function instead of == to compare sessions!)
     for course in current_schedule_dict:
-        for session in current_schedule_dict[course].copy():
-            if session in target_schedule_dict[course]:
-                current_schedule_dict[course].remove(session)
-                target_schedule_dict[course].remove(session)
+        for session1 in current_schedule_dict[course].copy():
+            for session2 in target_schedule_dict[course].copy():
+                if same_session(session1, session2):
+                    current_schedule_dict[course].remove(session1)
+                    target_schedule_dict[course].remove(session2)
 
-    
-    # print("Printing current schedule dict AFTER removing same sessions:")
-    # for course in current_schedule_dict:
-    #     print("Course: " + course)
-    #     for session in current_schedule_dict[course]:
-    #         print(session)
-    #     print()
-    
-    # print("\n")
-    # print("Printing target schedule dict AFTER removing same sessions:")
-    # for course in target_schedule_dict:
-    #     print("Course: " + course)
-    #     for session in target_schedule_dict[course]:
-    #         print(session)
-    #     print()
-
-
-    
+    # Swap sessions of the same category from the same course
     for course in current_schedule_dict:
         for session in current_schedule_dict[course]:
             # search target_schedule_dict[course] for the session with the same category
             for target_session in target_schedule_dict[course]:
                 if target_session.category == session.category:
                     # if the session has the same category, swap the session
-                    instructions.append("Swap session:\nCourse Name: " + course + "\nCategory:" + session.category + "\nFROM:\n" + str(session) + "\nTO:\n" + str(target_session) + "\n")
+                    #instructions.append("Swap session:\nCourse Name: " + course + "\nCategory:" + session.category + "\nFROM:\n" + str(session) + "\nTO:\n" + str(target_session) + "\n")
+                    instructions.append("Swap session:\n FROM:\n" + session.print_session_simplified() + "\n TO:\n" + target_session.print_session_simplified() + "\n")
+                    
+
                     diff_degree += 1
                     break
-
-
-
-
-
-    # Categorize the remaining sessions based on their type
-    # current_schedule_dict_categorized = {}
-    # target_schedule_dict_categorized = {}
-    # for course in current_schedule_dict:
-    #     for session in current_schedule_dict[course]:
-    #         if session.category not in current_schedule_dict_categorized[course]:
-    #             current_schedule_dict_categorized[course] = {session.category : None}
-    #         current_schedule_dict_categorized[course][session.category] = session
-            
-
-    # for course in target_schedule_dict:
-    #     for session in target_schedule_dict[course]:
-    #         if session.category not in target_schedule_dict_categorized[course]:
-    #             target_schedule_dict_categorized[course] = {session.category : None}
-    #         target_schedule_dict_categorized[course][session.category] = session
-
-
-    # print("Printing current_schedule_dict_categorized:")
-    # print_dict(current_schedule_dict_categorized)
-    # print("\n")
-    # print("Printing target_schedule_dict_categorized:")
-    # print_dict(target_schedule_dict_categorized)
-    # print("\n")
-
-
-    # # Generate instructions for each category
-    # for course in current_schedule_dict_categorized:
-    #     for category in current_schedule_dict_categorized[course]:
-    #         instructions.append("Swap course session:\nCourse Name: " + course + "\nCategory:\n" + category + "\nFROM:\n" + str(current_schedule_dict_categorized[course][category]) + "\nTO:\n" + str(target_schedule_dict_categorized[course][category]) + "\n")
-    #         diff_degree += 1
-    
 
     return diff_degree, instructions
 

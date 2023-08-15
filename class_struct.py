@@ -1,5 +1,95 @@
 import re
-from matching import print_calendar_schedule, print_calendar_schedule_simplified, convert_session_list_to_schedule
+
+def print_calendar_schedule(schedule):
+    print("\033[33m===============================================================================================================================\033[0m")
+    for day in schedule:
+        print("\033[33m{}\033[0m".format(day))
+        for session in schedule[day]:
+            print(session)
+        print()
+    print("\033[33m===============================================================================================================================\033[0m")
+
+
+def print_calendar_schedule_simplified(schedule):
+    print("\033[33m===============================================================================================================================\033[0m")
+    for day in schedule:
+        if day == "Online" and len(schedule[day]) == 0: # Skip printing online sessions if there are none
+            continue
+
+        print("\033[33m{}\033[0m".format(day))
+        for session in schedule[day]:
+            s = "\033[0m" + (session.course_name).ljust(10) \
+            + ("[" + session.class_code + "]").ljust(8) \
+            + (session.section).ljust(10) \
+            + (str(session.start_time[0]) + " " + str(session.start_time[1]) \
+            + " - " \
+            + str(session.end_time[0]) + " " + str(session.end_time[1])).ljust(22) \
+            + (str(session.days)).ljust(20)
+
+            if session.start_date != "" and session.end_date != "":
+                s += (str(session.start_date) + " - " + str(session.end_date)).ljust(18)
+            else:
+                s += "".ljust(15)
+
+
+            s += (session.room).ljust(10) + session.instructor
+
+
+            print(s)
+        print()
+    print("\033[33m===============================================================================================================================\033[0m")
+
+
+
+def print_calendar_schedule_simplified_to_file(schedule, file):
+    file.write("===============================================================================================================================\n")
+    for day in schedule:
+        file.write("{}\n".format(day))
+        for session in schedule[day]:
+            s = (session.course_name).ljust(10) \
+            + ("[" + session.class_code + "]").ljust(8) \
+            + (session.section).ljust(10) \
+            + (str(session.start_time[0]) + " " + str(session.start_time[1]) \
+            + " - " \
+            + str(session.end_time[0]) + " " + str(session.end_time[1])).ljust(22) \
+            + (str(session.days)).ljust(20)
+
+            if session.start_date != "" and session.end_date != "":
+                s += (str(session.start_date) + " - " + str(session.end_date)).ljust(18)
+            else:
+                s += "".ljust(15)
+
+
+            s += (session.room).ljust(10) + session.instructor
+
+            file.write(s + "\n\n")
+    file.write("===============================================================================================================================\n\n")
+
+
+def convert_session_list_to_schedule(session_list):
+    schedule = {'Monday': [], 'Tuesday': [], 'Wednesday': [], 'Thursday': [], 'Friday': [], "Online": []}
+    for session in session_list:
+        if session.room == "Online" or session.start_time == ['',''] or session.end_time == ['',''] or session.days == []:
+            schedule["Online"].append(session)
+            continue
+        for day in session.days:
+            if day == 'M':
+                schedule['Monday'].append(session)
+            elif day == 'T':
+                schedule['Tuesday'].append(session)
+            elif day == 'W':
+                schedule['Wednesday'].append(session)
+            elif day == 'Th':
+                schedule['Thursday'].append(session)
+            elif day == 'F':
+                schedule['Friday'].append(session)
+
+    for day in schedule:
+        schedule[day].sort(key=lambda x: x.start_time)
+
+    return schedule
+
+
 
 def convert_time(start_time, end_time, return_24h_format=True):
     # Convert start time to 24-hour format
@@ -82,6 +172,15 @@ class Course:
     
     def add_session(self, class_session):
         self.class_sessions.append(class_session)
+
+    def __eq__(self, other):
+        if isinstance(other, Course):
+            if not (self.course_code == other.course_code and self.course_number == other.course_number and self.course_title == other.course_title):
+                return False
+            for session in self.class_sessions:
+                if session not in other.class_sessions:
+                    return False
+        return False
     
     def __str__(self):
         session_str = "\n".join(str(session) for session in self.class_sessions)
@@ -106,7 +205,17 @@ class Session:
         self.end_date = parse_result[4]
         self.room = room
         self.instructor = instructor
+
+    # Only print session course_name, class_code, section
+    def print_session_simplified(self):
+        return f"{self.course_name}\t [{self.class_code}]\t Section: {self.section}"
+
     
+    def __eq__(self, other):
+        if isinstance(other, Session):
+            return self.course_name == other.course_name and self.class_code == other.class_code and self.section == other.section
+        return False
+
 
     def __str__(self):
         print_str = f"Course Name: {self.course_name}\t Class Code: {self.class_code}\t Section: {self.section}\t Category: {self.category}\t Enrolment Capacity: {self.capacity}\t Enrolment Total: {self.current}\t Waitlist Capacity: {self.waitcap}\t Waitlist Total: {self.waittotal}\t "
@@ -126,15 +235,13 @@ class Schedule:
         self.instructions = instructions
     
     def print_schedule(self):
-        print("Printing Schedule:")
         for session in self.sessions:
             print(session)
         print(f"diff_degree: {self.diff_degree}")
         print("Instructions:")
         print("\n".join(self.instructions))
     
-    def print_schedule_calendar_format(self, simplified=False, show_instructions=False):
-        print("Printing Schedule:")
+    def print_schedule_calendar_format(self, simplified=True, show_instructions=False):
         result = convert_session_list_to_schedule(self.sessions)
         if simplified:
             print_calendar_schedule_simplified(result)

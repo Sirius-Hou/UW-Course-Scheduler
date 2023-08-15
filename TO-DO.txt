@@ -2,17 +2,72 @@
 
 * 根据用户当前的课表，从all_generated_schedules中筛选出相近的课表
 
-* 根据用户的需求 （例如，更喜欢早上/下午/晚上的课，更喜欢某个/rating高的教授的课，更喜欢/不喜欢连着的session，能接受最长连续上多久课）筛选出满足条件的课表
+* 根据用户的需求筛选出满足条件的课表（例如，更喜欢早上/下午/晚上的课，更喜欢某个/rating高的教授的课，更喜欢/不喜欢连着的session，能接受最长连续上多久课）
 
 * 指导用户如何从其当前课表调整到选定的课表
 
 
 
 
-
+(DONE)
 * 根据用户从Quest上复制粘贴的课表（list格式），爬取当前已enroll的course code (e.g. EMLS101R (一定是全名称，区分大小写，中间无空格 （无效格式示例：EMLS101r, emls101r, EMLS101, EMLS 101R))
 (注：目前依靠人工手动输入course name以及session code （示例见：参照script.py开头的global_variables.client_schedule）)
 
 
-* URGENT:
+### DEV LOG:
+
+(FIXED)
 BUG: 测试get_schedule_convert_instructions函数 （script.py运行后global_variables.schedule_list_sorted中所有Schedule的diff_degree都是11）
+    (Note: 不要用"=="比较自定义的objects，要比较每个field的具体值)
+
+(FIXED)
+BUG: convert to simplified calendar format schedule (ONLINE session not shown)
+
+(FIXED)
+BUG: print_calendar_schedule_simplified(convert_session_list_to_schedule(global_variables.client_session_list))显示的课表与原本print_schedule(global_variables.client_session_list)的内容不同 （缺少session）
+
+(DONE)
+IMPROVE: 简化instruction显示信息 （只保留，session/course name, category, (session code)）
+
+
+IMRPPOVE: 检查用户输入的学期/课程名称是否正确 （通过检查爬取的网站信息是否包含且只包含一门课）
+检查：
+* 多个搜索结果：请求用户选择
+* 无索搜索结果：报错，要求用户输入正确的课程名，检查课程名是否正确
+
+
+(DONE)
+IMPROVE:
+在从本地文档中读取数据前，先检查文档是否存在
+
+
+(DONE)
+IMRPOVE:
+calendar display: weekly sessions (blue), TST sessions (yellow)
+
+(DONE)
+IMRPOVE:
+优化script.py step 6: 如果本地文件已存在，则不重复爬取&reformat
+
+(DONE)
+IMPROVE:
+尝试把root.mainloop()放在后台运行 （不阻碍其他代码的运行，calendar display可以在后台运行）
+
+(DONE)
+BUG:
+When interacting with client, when entering 'quit', force all threads to terminate
+
+
+IMPROVE:
+Schedule calendar display: add a notation list (online sessions are not shown, weekly sessions are displayed in green blocks, one-time sessions (e.g., TST sessions) are shown in yellow blocks)
+
+(DONE)
+IMPROVE:
+Schedule calendar display: add room info
+
+IMPROVE:
+Improve the ending message format: "Thank you for using UW Course Scheduler! See you next time!"
+
+
+IMPROVE:
+在询问用户term number时，显示从网站上爬取的term code list

@@ -1,0 +1,189 @@
+	
+Sissy He
+My Academics
+Course Selection (Undergrad only)
+Search for Classes
+Enroll
+ 	My Class Schedule	 	 	|	 	 	Shopping Cart	 	 	|	 	 	Add	 	 	|	 	 	Drop	 	 	|	 	 	Swap	 	 	|	 	 	Edit	 	 	|	 	 	Term Information	 	 	|	 	 	Exam Information	 
+My Class Schedule
+List View
+Weekly Calendar View
+Select Display Option
+L
+Spring 2023 | Undergraduate | University of Waterloo
+Group Box
+Collapse section Class Schedule Filter Options Class Schedule Filter Options 
+Show Enrolled Classes
+Show Dropped Classes
+Show Waitlisted Classes
+CO 250 - Intro Optimization
+Status	Units	Grading	Deadlines
+Enrolled
+0.50
+Numeric Grading Basis
+Academic Calendar Deadlines
+Class Nbr	Section	Component	Days & Times	Room	Instructor	Start/End Date
+4239
+081	
+LEC
+ 
+ONLN - Online
+Martin Pei
+05/08/2023 - 08/01/2023
+CS 240 - Data Structures & Data Mgmt
+Status	Units	Grading	Deadlines
+Enrolled
+0.50
+Numeric Grading Basis
+Academic Calendar Deadlines
+Class Nbr	Section	Component	Days & Times	Room	Instructor	Start/End Date
+3895
+201	
+TST
+T 4:30PM - 6:20PM
+TBA
+Karen Anderson
+06/27/2023 - 06/27/2023
+3843
+001	
+LEC
+TTh 1:00PM - 2:20PM
+STC 0060
+Eric Schost
+05/08/2023 - 08/01/2023
+4049
+101	
+TUT
+M 10:30AM - 11:20AM
+STC 0010
+Staff
+05/08/2023 - 08/01/2023
+CS 247 - Software Eng Principles
+Status	Units	Grading	Deadlines
+Enrolled
+0.50
+Numeric Grading Basis
+Academic Calendar Deadlines
+Class Nbr	Section	Component	Days & Times	Room	Instructor	Start/End Date
+4053
+001	
+LEC
+TTh 10:00AM - 11:20AM
+STC 0050
+Ross Evans
+05/08/2023 - 08/01/2023
+4054
+101	
+TUT
+W 10:30AM - 11:20AM
+STC 0010
+Staff
+05/08/2023 - 08/01/2023
+4055
+201	
+TST
+Th 4:30PM - 6:20PM
+TBA
+Scott King
+06/29/2023 - 06/29/2023
+CS 348 - Intro Database Management
+Status	Units	Grading	Deadlines
+Enrolled
+0.50
+Numeric Grading Basis
+Academic Calendar Deadlines
+Class Nbr	Section	Component	Days & Times	Room	Instructor	Start/End Date
+4223
+003	
+LEC
+TTh 2:30PM - 3:50PM
+STC 0040
+David Toman
+05/08/2023 - 08/01/2023
+4344
+101	
+TST
+M 7:00PM - 8:50PM
+TBA
+Sylvie Davies
+06/26/2023 - 06/26/2023
+ECE 192 - Eng Economics & Society Impact
+Status	Units	Grading	Deadlines
+Enrolled
+0.25
+Numeric Grading Basis
+Academic Calendar Deadlines
+Class Nbr	Section	Component	Days & Times	Room	Instructor	Start/End Date
+3579
+003	
+LEC
+MW 12:30PM - 1:20PM
+STC 0010
+Dario Andres Peralta Moarry
+05/08/2023 - 08/01/2023
+3580
+107	
+TUT
+F 12:30PM - 1:20PM
+STC 0040
+Dario Andres Peralta Moarry
+05/08/2023 - 08/01/2023
+ENVS 205 - Sustainability: Future We Want
+Status	Units	Grading	Requirement Designation	Deadlines
+Withdrawn
+0.50
+Degree Reqment, Not in GPA
+Degree Requirement, Not in Average (Not Taken)
+Academic Calendar Deadlines
+Class Nbr	Section	Component	Days & Times	Room	Instructor	Start/End Date
+3755
+081	
+LEC
+ 
+ONLN - Online
+Mohammed Uddin
+05/08/2023 - 08/01/2023
+MATH 239 - Intro Combinatorics
+Status	Units	Grading	Deadlines
+Enrolled
+0.50
+Numeric Grading Basis
+Academic Calendar Deadlines
+Class Nbr	Section	Component	Days & Times	Room	Instructor	Start/End Date
+3901
+201	
+TST
+Th 4:30PM - 6:20PM
+TBA
+Staff
+07/06/2023 - 07/06/2023
+4016
+004	
+LEC
+MWF 1:30PM - 2:20PM
+STC 0050
+Douglas Stebila
+05/08/2023 - 08/01/2023
+4017
+104	
+TUT
+F 10:30AM - 11:20AM
+STC 0060
+Staff
+05/08/2023 - 08/01/2023
+SE 202 - Seminar
+Status	Units	Grading	Deadlines
+Enrolled
+0.00
+Non-Graded Component
+Academic Calendar Deadlines
+Class Nbr	Section	Component	Days & Times	Room	Instructor	Start/End Date
+4739
+001	
+SEM
+ 
+TBA
+Patrick Lam
+05/08/2023 - 08/01/2023
+Printer Friendly Page
+Go to top iconGo to top

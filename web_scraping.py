@@ -1,3 +1,6 @@
+from public import * # libraries and functions that are used in multiple files
+import global_variables # global variables that are used in multiple files
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
@@ -60,6 +63,10 @@ def get_course_info_Requests(term=1239, subject="CS", course_number="136"):
     url = "https://info.uwaterloo.ca/cgi-bin/cgiwrap/infocour/salook.pl"
     payload = {'sess': int(term), 'level': 'under', 'subject': subject, 'cournum': course_number}
     r = requests.get(url, params=payload).text
+
+    if "no matches" in r:
+        return False
+
     soup = BeautifulSoup(r, 'html.parser')
     main_table = soup.find('table', border=2)
 
@@ -83,7 +90,9 @@ def get_course_info_Requests(term=1239, subject="CS", course_number="136"):
                     cols = [ele.text.strip() for ele in cols]
                     writer.writerow(cols)
     # DEBUGGER
-    print(f"{subject}{course_number} info saved to docs/course_info/{subject}{course_number}.csv")
+    #console.print(f"[green][italic]{subject}{course_number}[/green][/italic] info saved to [green][italic][underline]docs/course_info/{subject}{course_number}.csv[/green][/italic][/underline]")
+
+    return True
 
 
 
