@@ -1,0 +1,112 @@
+go to ...
+GO!
+Catherine Chen
+My Academics
+Course Selection (Undergrad only)
+Search for Classes
+Enroll
+ 	My Class Schedule	 	 	|	 	 	Shopping Cart	 	 	|	 	 	Add	 	 	|	 	 	Drop	 	 	|	 	 	Swap	 	 	|	 	 	Edit	 	 	|	 	 	Term Information	 	 	|	 	 	Exam Information	 
+My Class Schedule
+List View
+Weekly Calendar View
+Select Display Option
+L
+Fall 2023 | Undergraduate | University of Waterloo
+Group Box
+Collapse section Class Schedule Filter Options Class Schedule Filter Options 
+Show Enrolled Classes
+Show Dropped Classes
+Show Waitlisted Classes
+ACTSC 372 - Investment Sci & Corporate Fin
+Status	Units	Grading	Deadlines
+Enrolled
+0.50
+Numeric Grading Basis
+Academic Calendar Deadlines
+Class Nbr	Section	Component	Days & Times	Room	Instructor	Start/End Date
+6820
+002	
+LEC
+TTh 11:30AM - 12:50PM
+STC 0010
+Suryapratim Banerjee
+2023/09/06 - 2023/12/05
+8866
+101	
+TUT
+F 3:30PM - 4:20PM
+RCH 101
+Suryapratim Banerjee
+2023/09/06 - 2023/12/05
+CO 250 - Intro Optimization
+Status	Units	Grading	Deadlines
+Enrolled
+0.50
+Numeric Grading Basis
+Academic Calendar Deadlines
+Class Nbr	Section	Component	Days & Times	Room	Instructor	Start/End Date
+6822
+002	
+LEC
+MWF 12:30PM - 1:20PM
+HH 1101
+David Jao
+2023/09/06 - 2023/12/05
+9027
+102	
+TUT
+Th 8:30AM - 9:20AM
+RCH 103
+Staff
+2023/09/06 - 2023/12/05
+CS 330 - Management Information Systems
+Status	Units	Grading	Deadlines
+Enrolled
+0.50
+Numeric Grading Basis
+Academic Calendar Deadlines
+Class Nbr	Section	Component	Days & Times	Room	Instructor	Start/End Date
+6255
+002	
+LEC
+TTh 1:00PM - 2:20PM
+MC 4021
+Nikhita Joshi
+2023/09/06 - 2023/12/05
+PMATH 331 - Applied Real Analysis
+Status	Units	Grading	Deadlines
+Enrolled
+0.50
+Numeric Grading Basis
+Academic Calendar Deadlines
+Class Nbr	Section	Component	Days & Times	Room	Instructor	Start/End Date
+6089
+001	
+LEC
+MWF 8:30AM - 9:20AM
+MC 4020
+Changho Han
+2023/09/06 - 2023/12/05
+STAT 341 - Computational Stats & Analysis
+Status	Units	Grading	Deadlines
+Enrolled
+0.50
+Numeric Grading Basis
+Academic Calendar Deadlines
+Class Nbr	Section	Component	Days & Times	Room	Instructor	Start/End Date
+6571
+101	
+TUT
+F 1:30PM - 2:20PM
+RCH 101
+Nathaniel Stevens
+2023/09/06 - 2023/12/05
+6688
+002	
+LEC
+TTh 10:00AM - 11:20AM
+EXP 1689
+Nathaniel Stevens
+2023/09/06 - 2023/12/05
+Printer Friendly Page
+Go to top iconGo to top

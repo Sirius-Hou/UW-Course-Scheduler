@@ -96,3 +96,16 @@ def get_course_info_Requests(term=1239, subject="CS", course_number="136"):
 
 
 
+def get_term_codes():
+    # Set up the request
+    url = "https://classes.uwaterloo.ca/under.html"
+
+    r = requests.get(url).text
+
+    # extract the line that contains the term codes
+    # Find the start and end indices of the line containing the term codes
+    start_index = r.find("Term (")
+    end_index = r.find("):<br>", start_index)
+
+    # Extract the line containing the term codes
+    return r[start_index:end_index]

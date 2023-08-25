@@ -1,7 +1,5 @@
 import tkinter as tk
 
-# root = tk.Tk()
-
 def create_calendar():
     root = tk.Tk()
     root.title("Weekly Schedule")
@@ -20,11 +18,11 @@ def create_calendar():
             else:
                 time_label = f"{hour:02d}:00 PM"
             tk.Label(root, text=time_label, width=30, height=2, borderwidth=1, relief="groove", highlightbackground="grey").grid(row=(i-8)*2, column=0, rowspan=2)
-            # time period header rows: 16, 20, 24, 28, 32, 36, 40, 44
+            # time period header rows: 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72
             #tk.Label(root, text=time_label, width=30, height=2, borderwidth=1, relief="groove", highlightbackground="grey").grid(row=(i-16)//2 + 1, column=0, rowspan=2)
         for day in range(7):
             tk.Label(root, text="", bg="white", width=30, height=2, borderwidth=1, relief="groove", highlightbackground="grey").grid(row=(i-8)*2+1, column=day+1)
-            # time period rows: 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43
+            # time period rows: 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, ...
             #tk.Label(root, text="", bg="white", width=30, height=2, borderwidth=1, relief="groove", highlightbackground="grey").grid(row=(i-16)+1, column=day+1)
     return root
 
@@ -138,6 +136,33 @@ def add_event(root, event, one_time=False):
 #             event_label.grid(row=16+(start_hour-8)*4+(start_minute//30)*2, column=day_index+1, rowspan=rs*2+1, sticky="n")
 
 
+
+
 def add_annotations(root, online_sessions, request_failed_courses):
-    # TO BE IMPLEMENTED
-    pass
+    rs = len(online_sessions) + len(request_failed_courses) + 3
+
+    # Create canvas
+    canvas = tk.Canvas(root, width=214, height=34*rs, borderwidth=0, highlightthickness=0)
+    canvas.grid(row=76-2*rs, column=7, rowspan=rs*2+1, sticky="n")
+
+    # Draw bounding rectangle
+    canvas.create_rectangle(0, 0, 214, 34*rs, fill="#e5e4e2", outline="black")
+
+    # Add online sessions
+    online_text = "Online sessions:\n"
+    if len(online_sessions) == 0:
+        online_text += "None"
+    else:
+        online_text += "\n".join([f"[{session.class_code}] {session.course_name} {session.section}" for session in online_sessions])
+
+    # # Add request failed courses
+    failed_text = "Request failed courses:\n"
+    if len(request_failed_courses) == 0:
+        failed_text += "None"
+    else:
+        failed_text += "\n".join(course_name for course_name in request_failed_courses)
+
+    txt = "* Annotation:\n" + online_text + "\n\n" + failed_text
+
+    canvas.create_text(100, 12*rs, text=txt, fill="black", font=("Arial", 12), justify="left")
+

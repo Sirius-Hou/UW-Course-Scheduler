@@ -67,7 +67,7 @@ def add_sessions_to_schedule(curr_schedule, new_schedule_list, curr_course, to_b
     to_be_scheduled_sessions = to_be_scheduled_sessions[1:]
 
     # if this course does not have a session of the current category, skip it
-    if len(courses_dict[curr_course][curr_session]) == 0:
+    if curr_course not in courses_dict or curr_session not in courses_dict[curr_course] or len(courses_dict[curr_course][curr_session]) == 0:
         add_sessions_to_schedule(curr_schedule, new_schedule_list, curr_course, to_be_scheduled_sessions, courses_dict)
         return None
 

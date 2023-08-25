@@ -57,7 +57,7 @@ IMPROVE:
 BUG:
 When interacting with client, when entering 'quit', force all threads to terminate
 
-
+(DONE)
 IMPROVE:
 Schedule calendar display: add a notation list (online sessions are not shown, weekly sessions are displayed in green blocks, one-time sessions (e.g., TST sessions) are shown in yellow blocks)
 
@@ -65,9 +65,15 @@ Schedule calendar display: add a notation list (online sessions are not shown, w
 IMPROVE:
 Schedule calendar display: add room info
 
+(DONE)
 IMPROVE:
 Improve the ending message format: "Thank you for using UW Course Scheduler! See you next time!"
 
-
+(DONE)
 IMPROVE:
 在询问用户term number时，显示从网站上爬取的term code list
+
+IMPROVE:
+有的时候由于course enrolment capacity, 学校的课表没办法完全调整到用户想要的结果，但用户还想去ta原本想去的session蹭课，我们可以忽略学校的选课限制，手动调整用户的课表，
+生成ta最终想要的课表，方便后期上课查看
+方法：根据用户需求调整当前课表，（用户手动add/drop/swap courses/sessions），实时爬取、reformat、process，当用户确认ok后显示calendar display

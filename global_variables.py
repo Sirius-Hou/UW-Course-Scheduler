@@ -3,10 +3,11 @@
 #===================================================================================================
 # HERE ARE THE INFORMATION YOU MAY NEED TO CHANGE
 term = 1239 # enter the term code
-course_list = ['CS348', 'CS346', 'CS350', 'STAT231', 'ECON371'] # enter the course codes (make sure to enter the full name, no space, case sensitive (e.g., EMLS101R not EMLS101r or EMLS 101R)))
-#global_variables.course_list = ['CS136', 'CS247', 'MATH239', 'CS348', 'CO250', 'ECE192']
+course_list = ['CS341', 'CS346', 'CS350', 'STAT231', 'ECON371'] # enter the course codes (make sure to enter the full name, no space, case sensitive (e.g., EMLS101R not EMLS101r or EMLS 101R)))
+#course_list = ['CS136', 'CS247', 'MATH239', 'CS348', 'CO250', 'ECE192']
+course_list = ['PMATH331', 'CO250', 'STAT341', 'ACTSC372', 'CS330']
 client_schedule_path = 'docs/client/client_current_schedule.txt' # default path for client schedule
-#client_schedule_path = 'docs/client/sissy.txt'
+client_schedule_path = 'docs/client/catherine.txt'
 # ===================================================================================================
 
 

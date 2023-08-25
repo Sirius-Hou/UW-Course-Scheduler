@@ -1,10 +1,10 @@
-DEBUG_MODE = False
+DEBUG_MODE = True
 
 from public import * # libraries and functions that are used in multiple files
 import global_variables # global variables that are used in multiple files
 
 from class_struct import Course, Session, Schedule, print_calendar_schedule, print_calendar_schedule_simplified, print_calendar_schedule_simplified_to_file, convert_session_list_to_schedule
-from web_scraping import get_course_info_Requests
+from web_scraping import get_course_info_Requests, get_term_codes
 from text_formating import format_course_info
 from chatgpt import chat_with_gpt, gpt_generate_schedule, gpt_convert_to_calendar_format
 from matching import add_courses_to_schedule, get_schedule_convert_instructions
@@ -60,7 +60,8 @@ def get_schedult_calendar_display(session_list):
                     cs.days, cs.start_date, cs.end_date, cs.room], cs.category=='TST')
 
     # add an annotation section at the bottom right corner if there are online sessions or global_variables.client_request_failed_courses is not empty
-    add_annotations(root, online_sessions, global_variables.client_request_failed_courses)
+    if len(online_sessions) > 0 or len(global_variables.client_request_failed_courses) > 0:
+        add_annotations(root, online_sessions, global_variables.client_request_failed_courses)
 
     root.mainloop()
 
@@ -177,10 +178,10 @@ def get_courses():
 
                 option = input('>>> ')
                 if option == 'term':
-                    rprint("Please enter the term code: (e.g, 1239 (Fall 2023)))")
+                    rprint(f"Please enter the term code: (e.g, {get_term_codes()})")
                     new_term = input()
                     while not new_term.isdigit():
-                        rprint("INVAID TERM CODE! Please enter a valid term code: (e.g, 1239 (Fall 2023)))")
+                        rprint(f"INVAID TERM CODE! Please enter a valid term code: (e.g, {get_term_codes()})")
                         new_term = input()
                     global_variables.term = new_term
                 else:
@@ -223,8 +224,11 @@ def categorize_sessions():
     if not INPUT_IDENTITY[0] or not os.path.exists('data/courses_dict.pickle'):
         # Create a dictionary of courses, separated by course names and session categories
         for course in track(global_variables.courses, description="Processing courses: "):  # show progress bar
-            global_variables.courses_dict[course.course_name] = {'LEC': [], 'TST': [], 'LAB': [], 'TUT': [], 'SEM': []}
+            # global_variables.courses_dict[course.course_name] = {'LEC': [], 'TST': [], 'LAB': [], 'TUT': [], 'SEM': []}
+            global_variables.courses_dict[course.course_name] = {}
             for session in course.class_sessions:
+                if session.category not in global_variables.courses_dict[course.course_name]:
+                    global_variables.courses_dict[course.course_name][session.category] = []
                 global_variables.courses_dict[course.course_name][session.category].append(session)
 
         # Save courses_dict to a local file
@@ -374,7 +378,8 @@ while True:
             continue
 
         elif instr == 'quit':
-            rprint("Thank you for using [yellow][italic]UW Course Scheduler[/yellow][/italic]! See you next time!")
+            # rprint("Thank you for using [yellow][italic]UW Course Scheduler[/yellow][/italic]! See you next time!")
+            console.print(Markdown('# ***Thank you for using UW Course Scheduler! See you next time!***'))
             sys.exit()  # Terminate all threads and exit the program
 
         else:
