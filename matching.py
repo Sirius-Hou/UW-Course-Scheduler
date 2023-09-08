@@ -178,8 +178,8 @@ def get_schedule_convert_instructions(current_schedule, target_schedule):
             for target_session in target_schedule_dict[course]:
                 if target_session.category == session.category:
                     # if the session has the same category, swap the session
-                    #instructions.append("Swap session:\nCourse Name: " + course + "\nCategory:" + session.category + "\nFROM:\n" + str(session) + "\nTO:\n" + str(target_session) + "\n")
-                    instructions.append("Swap session:\n FROM:\n" + session.print_session_simplified() + "\n TO:\n" + target_session.print_session_simplified() + "\n")
+                    #instructions.append("Swap Session:\nCourse Name: " + course + "\nCategory:" + session.category + "\nFROM:\n" + str(session) + "\nTO:\n" + str(target_session) + "\n")
+                    instructions.append("Swap Session:\n FROM:\n" + session.print_session_simplified() + "\n TO:\n" + target_session.print_session_simplified() + "\n")
                     
 
                     diff_degree += 1

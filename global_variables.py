@@ -5,14 +5,16 @@
 term = 1239 # enter the term code
 course_list = ['CS341', 'CS346', 'CS350', 'STAT231', 'ECON371'] # enter the course codes (make sure to enter the full name, no space, case sensitive (e.g., EMLS101R not EMLS101r or EMLS 101R)))
 #course_list = ['CS136', 'CS247', 'MATH239', 'CS348', 'CO250', 'ECE192']
-course_list = ['PMATH331', 'CO250', 'STAT341', 'ACTSC372', 'CS330']
+#course_list = ['PMATH331', 'CO250', 'STAT341', 'ACTSC372', 'CS330']
 client_schedule_path = 'docs/client/client_current_schedule.txt' # default path for client schedule
-client_schedule_path = 'docs/client/catherine.txt'
+#client_schedule_path = 'docs/client/catherine.txt'
+client_friend_schedule_path = 'docs/client/client_friend_schedule.txt' # default path for client friend schedule
 # ===================================================================================================
 
 
 # client_schedule: dictionary: keys: course names (e.g. 'CS341'), values: list of session numbers (e.g. 6021) 
 # (e.g. {'CS341' : [6021, 6888, 6893], 'CS346' : [6905, 6907]})
+# client_schedule = []
 client_schedule = []
 
 # Example:
@@ -22,17 +24,30 @@ client_schedule = []
 #                    'ECON371' : [4127],
 #                    'STAT231' : [6433, 6879, 6885]}
 
+client_friend_schedule = []
+
+# client_friend_schedule_class: Schedule object
+client_friend_schedule_class = None
+
 
 # client_session_list: [list of sessions that the client has selected]
 client_session_list = []
 
+# client_friend_session_list: [list of sessions that the client's friend has selected]
+client_friend_session_list = []
+
 
 # client_schedule_calendar_dict: {'Monday': [list of sessions on Monday], 'Tuesday': [list of sessions on Tuesday], ...]}
-client_schedule_calendar_dict = []
+client_schedule_calendar_dict = dict()
+
+# client_friend_schedule_calendar_dict: {'Monday': [list of sessions on Monday], 'Tuesday': [list of sessions on Tuesday], ...]}
+client_friend_schedule_calendar_dict = dict()
 
 # courses that failed to be requested based on client's current schedule (e.g. ['COOP 1'])
 # (Note: this might be caused due to incorrect term number or special courses that are not in the undergrad course database (e.g., COOP category courses))
 client_request_failed_courses = []
+
+client_friend_request_failed_courses = []
 
 
 

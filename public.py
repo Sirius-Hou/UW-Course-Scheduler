@@ -30,6 +30,8 @@ from rich.panel import Panel
 console_width = os.get_terminal_size().columns
 seperate_line = "=" * console_width
 
+import pyautogui
+
 
 
 

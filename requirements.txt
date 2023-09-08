@@ -1,0 +1,9 @@
+selenium
+requests
+beautifulsoup4
+pandas
+rich
+pyfiglet
+termcolor
+pyautogui 
+openai

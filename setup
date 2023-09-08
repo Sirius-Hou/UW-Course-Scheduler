@@ -1,0 +1,7 @@
+#!/bin/bash
+# This script is used to setup the environment for the project
+npm init -y
+npm i dotenv openai
+pip install openai
+pip install python-dotenv
+pip install -r requirements.txt

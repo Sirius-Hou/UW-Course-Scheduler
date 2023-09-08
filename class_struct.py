@@ -209,6 +209,12 @@ class Session:
     # Only print session course_name, class_code, section
     def print_session_simplified(self):
         return f"{self.course_name}\t [{self.class_code}]\t Section: {self.section}"
+    
+
+    def print_session_display_simplified(self):
+        msg = f"- [{self.class_code}] {self.course_name} {self.section}  ({self.start_time[0]}{self.start_time[1]}-{self.end_time[0]}{self.end_time[1]}) {self.days}" + ("" if self.start_date == "" else f"{self.start_date}-{self.end_date}")
+        print(msg)
+        return msg
 
     
     def __eq__(self, other):
@@ -251,5 +257,8 @@ class Schedule:
         if show_instructions:
             print("Instructions:")
             print("\n".join(self.instructions))
+
+
+
 
         

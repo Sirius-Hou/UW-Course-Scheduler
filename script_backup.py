@@ -89,16 +89,11 @@ def get_schedule_calendar_display(session_list, title_name='Client Schedule'):
 
     while should_run:
         root.update()  # Update the display
-        time.sleep(0.5)  # Sleep for 1 second to avoid busy waiting
+        time.sleep(1)  # Sleep for 1 second to avoid busy waiting
 
-    # Destroy the window when the thread is terminated
-    try:
-        root.destroy()
-    except:
-        pass
+    # root.destroy()  # Destroy the window when the thread is terminated
+    return root
 
-
-    
 
 
 
@@ -575,7 +570,7 @@ def print_adjustment_commands():
   - ***[show period [start time] [end time]]:*** Show the sessions that start between the given start time and end time. (e.g.: show period 10:00 12:00)
   - ***[add [course code]]:*** Add the course with the given course code to your schedule. (e.g.: add CS135)
   - ***[drop [course code]]:*** Drop the course with the given course code from your schedule. (e.g.: drop CS135)
-  - ***[swap [course code] [current session code] [new session code]]:*** Swap a current session code with another session in course with the given course code. (e.g.: swap CS346 6904 6905)
+  - ***[swap [session1 code] [session2 code]]:*** Swap the session with the given session1 code with the session with the given session2 code. (e.g.: swap 6021 6893)
   - ***Press [ENTER] to go back to the main menu.***
   - ***Press [i] to show the instructions again.***
 """
@@ -882,7 +877,7 @@ while True:
                     else:
                         sessions_left.append(session)
                 
-                rprint(f"Are you sure you want to drop {cmd[1]}? (y/n)")
+                rprint(f"Are you sure you want to drop {cmd[1]}? (Y/N)")
                 rprint(f"Sessions to be removed:")
                 for session in sessions_to_be_removed:
                     session.print_session_display_simplified()
@@ -900,92 +895,19 @@ while True:
                     thread = threading.Thread(target=get_schedule_calendar_display, args=(temp_session_list, "Client Current Schedule",))
                     thread.daemon = True  # Set the thread as a daemon thread
                     thread.start()
-
                 
-            elif cmd[0] == 'swap' and len(cmd) >= 4:
-                if len(cmd) > 4:
-                    rprint("Invalid input! Please enter one course code and two session codes.")
-                    continue
+            elif cmd[0] == 'swap' and len(cmd) >= 3:
+                pass
 
-                # Check if the course code is valid
-                if not is_valid_course_code(cmd[1]):
-                    rprint(f"ERROR: Course code {cmd[1]} does not match the specified format.")
-                    continue
-
-                # Check if the session codes are valid
-                if not cmd[2].isdigit() or not cmd[3].isdigit():
-                    rprint("Invalid input! Session codes must be digit numbers (e.g., 6021, 6893, ...).")
-                    continue
-
-                # Check if the the first provided session is in the client's current schedule
-                if int(cmd[2]) not in [int(s.class_code) for s in temp_session_list]:
-                    rprint(f"ERROR: {cmd[2]} is not in your current schedule. Please follow this format: swap <course code> <current session code> <new session code>")
-                    continue
+            elif cmd[0] == 'help':
+                print_adjustment_commands()
             
-                # Check if the the second provided session is in the same course as the first provided session and they are the same category
-                curr_session = None
-                new_session = None
-
-                # PROBABLY NOT NECESSARY
-                if cmd[1] not in temp_courses_info:
-                    result = scrape_course_info(cmd[1])
-                    temp_courses_info[cmd[1]] = result
-
-                for category in temp_courses_info[cmd[1]]:
-                    for s in temp_courses_info[cmd[1]][category]:
-                        if int(s.class_code) == int(cmd[2]):
-                            curr_session = s
-                        if int(s.class_code) == int(cmd[3]):
-                            new_session = s
-                
-                if new_session == None:
-                    rprint(f"ERROR: {cmd[3]} is not in {cmd[1]} course. Please follow this format: swap <course code> <current session code> <new session code>")
-                    continue
-                
-                if curr_session.category != new_session.category:
-                    rprint(f"ERROR: {cmd[2]} and {cmd[3]} are not in the same category. You should only swap sessions in the same category.")
-                    continue
-                else:
-
-                    rprint("Are you sure you want to swap the following sessions? (y/n)")
-                    rprint(f"Swap session from:")
-                    curr_session.print_session_display_simplified()
-                    rprint(f"To:")
-                    new_session.print_session_display_simplified()
-                    if input(">>> ").lower() == 'y':
-                        # Swap the two sessions
-                        # get index of the current session
-                        index = temp_session_list.index(curr_session)
-                        # remove the current session
-                        temp_session_list.pop(index)
-                        # insert the new session at the same index
-                        temp_session_list.insert(index, new_session)
-
-                        # Update the client's current schedule
-                        # Terminate the thread
-                        should_run = False  # Set the flag to indicate that the thread should stop running
-                        thread.join()  # Wait for the thread to complete
-
-                        should_run = True
-                        thread = threading.Thread(target=get_schedule_calendar_display, args=(temp_session_list, "Client Current Schedule",))
-                        thread.daemon = True  # Set the thread as a daemon thread
-                        thread.start()
-
-                        # Print confirmation message
-                        rprint("> Session swap completed!")
-                    
-                    else:
-                        rprint("> Session swap cancelled.")
-                        continue
-
-
             elif cmd[0] == 'save':
-                # Save final result to the client's current schedule
-                global_variables.client_session_list = temp_session_list
-                global_variables.course_dict = temp_courses_info
-                global_variables.client_schedule_calendar_dict = convert_session_list_to_schedule(global_variables.client_session_list)
+                # Save the screenshot of client's current schedule to a local file
+                console.log("Saving [green]client's current schedule[/green] to [green][italic][underline]docs/generated/client_current_schedule.png[/green][/italic][/underline] ...")
+                
 
-
+        
             elif cmd[0] == 'i':
                 print_adjustment_commands()
 

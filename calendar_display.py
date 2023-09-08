@@ -1,8 +1,8 @@
 import tkinter as tk
 
-def create_calendar():
+def create_calendar(title_name="Weekly Schedule"):
     root = tk.Tk()
-    root.title("Weekly Schedule")
+    root.title(title_name)
 
     # Create header for days
     days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']

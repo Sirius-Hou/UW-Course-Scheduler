@@ -73,7 +73,40 @@ Improve the ending message format: "Thank you for using UW Course Scheduler! See
 IMPROVE:
 在询问用户term number时，显示从网站上爬取的term code list
 
-IMPROVE:
+
+IMPROVE: (ADVANCED)
+根据用户目前已经上了的课程，安排推荐后面每学期的课程安排
+方法：
+1. 创建一个CourseNode Class，用chatgpt手动翻译成python object initialization code。
+2.
+
+
+IMPROVE: (PRIORITY)
 有的时候由于course enrolment capacity, 学校的课表没办法完全调整到用户想要的结果，但用户还想去ta原本想去的session蹭课，我们可以忽略学校的选课限制，手动调整用户的课表，
 生成ta最终想要的课表，方便后期上课查看
 方法：根据用户需求调整当前课表，（用户手动add/drop/swap courses/sessions），实时爬取、reformat、process，当用户确认ok后显示calendar display
+
+指令：
+- show <course code> (e.g.: show CS341)
+- add <course code> (e.g.: add CS346)
+- drop <course code> (e.g.: drop CS346)
+- swap <session1 code> <session2 code> (e.g.: swap 6021 6893) (*check if two sessions belongs to the same course)
+
+EXTRA:
+- show morning/afternoon/evening
+- show LEC/LAB/TUT/TST
+- show period <start time> <end time> (e.g.: show period 10:00 19:00 -> show all sessions between 10:00AM and 19:00PM)
+
+show指令：
+* course code
+* keywords "morning" or "afternoon" or "evening"
+* keywords "LEC" or "LAB" or "TUT" or "TST"
+* keywords period -> paraphrase start and end time
+
+IMPROVE: Check for time conflicts when adding a course / swapping a session
+
+IMPROVE: Save the edited version
+
+
+BUG:
+之前打开的calendar windows有时会被自动关闭
