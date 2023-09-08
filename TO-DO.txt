@@ -110,3 +110,6 @@ IMPROVE: Save the edited version
 
 BUG:
 之前打开的calendar windows有时会被自动关闭
+
+IMPROVE:
+instruction from original schedule to final version
