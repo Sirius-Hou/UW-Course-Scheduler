@@ -17,7 +17,8 @@
   <img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/6378775f-41e4-4b36-8ed1-6e8ae5ece32b" alt="image" width="80%" height="80%" />
 
 * Show instructions to convert from your current schedule to a desired generated schedule
-  ![image](https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/f7ce3cc5-5322-4ed8-bfe7-fea5a403f9cd)
+  <img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/f7ce3cc5-5322-4ed8-bfe7-fea5a403f9cd" alt="image" width="80%" height="80%" />
+
 
 * Import your friend's schedule and show instructions to convert from your current schedule to your friend's
 * Adjust your schedule (show latest courses/sessions info, add/drop courses, swap sessions), changes reflected on calendar display in real time
