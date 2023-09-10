@@ -3,7 +3,6 @@
 
 <img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/c309779f-c995-4a2c-aba0-deacefa02491" alt="image" width="100%" height="100%" />
 
-
 ## Features:
 * Import your current schedule from text and display in calendar format or list format
   
