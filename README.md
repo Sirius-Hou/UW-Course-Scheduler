@@ -1,8 +1,25 @@
 # UW Couse Scheduler
 ## A schedule planning agent for University of Waterloo students
 
+## Features:
+* Get your current schedule and display in calendar format or list format
+
+  <img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/75c7cbad-0057-4df0-a54b-01e17ff030fe" alt="image" width="300" height="200" />
+  <img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/896e7dfd-f095-4927-b133-c21df2f23354" alt="image" width="300" height="200" />
+* Calculate and visualize all possible time-conflict-free schedules based on your selection of courses
+  ![image](https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/57c3b293-5fe2-4b01-b794-b288d1e76f85)
+
+  
+* Show instructions to convert from your current schedule to a desired generated schedule
+* Import your friend's schedule and show instructions to convert from your current schedule to your friend's
+* Adjust your schedule (show latest courses/sessions info, add/drop courses, swap sessions), changes reflected on calendar display in real time
+
+
+
 ## Setup
 Step 1: Clone the project to your computer
+
+Step 2: Download Python and set up system variable environment path to Python directory
 
 Step 2: Direct to the *UW-Course-Scheduler* directory and run the  `setup` program as administrator, or copy-paste the following command in terminal and execute:
 ```
@@ -23,8 +40,23 @@ This project is currently in beta test version and runs on terminal. To execute 
 
 (2) Go to **Class Schedule**
 
-<img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/02ca7c3b-01dc-4ad9-a97c-ede4bc60f76f" alt="image" width="300" height="200" />
-
 (3) Pick your term then select all (Ctrl+A) and copy (Ctrl+C)
 
 <img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/67217f0d-9197-4049-8b19-199b5b225dab" alt="image" width="300" height="200" />
+
+(4) Go to your UW Course Scheduler folder, direct to `docs\client\`, open `client_current_schedule.txt` file, paste the copied text and save the file
+
+<img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/6552189d-0e13-4040-95ae-eb5ad0936fb1" alt="image" width="300" height="200" />
+
+#### Step 2: Run script
+Open terminal and direct to UW-Course-Scheduler directory. Run `python script.py`
+
+<img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/c309779f-c995-4a2c-aba0-deacefa02491" alt="image" width="300" height="200" />
+
+Follow the instructions to proceed.
+
+
+
+
+
+
