@@ -4,7 +4,7 @@
 ## Features:
 * Get your current schedule and display in calendar format or list format
 
-  <img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/75c7cbad-0057-4df0-a54b-01e17ff030fe" alt="image" width="300" height="200" />
+  <img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/75c7cbad-0057-4df0-a54b-01e17ff030fe" alt="image" width="1000" height="800" />
   <img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/896e7dfd-f095-4927-b133-c21df2f23354" alt="image" width="300" height="200" />
 * Calculate and visualize all possible time-conflict-free schedules based on your selection of courses
   ![image](https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/57c3b293-5fe2-4b01-b794-b288d1e76f85)
