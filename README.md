@@ -72,7 +72,8 @@ Open file `global_variables.py` under the *UW-Course-Scheduler* directory
 
 Enter the term code and courses you wish to take, save the file. (Note: you can find term code info [here](https://classes.uwaterloo.ca/under.html))
 
-<img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/8b63f106-4a41-4376-838c-2d8bb4f632c9" alt="image" width="80%" height="80%" />
+<img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/40c9cb6f-8eea-4ee7-9f28-4f7e74405e76" alt="image" width="80%" height="80%" />
+
 
 
 #### Step 2: Run script
