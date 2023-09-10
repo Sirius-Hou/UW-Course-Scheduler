@@ -38,7 +38,7 @@
 ## Setup
 Step 1: Clone the project to your computer
 
-Step 2: Download Python and set up system variable environment path to Python directory
+Step 2: Download and install Python and set up environment path
 
 Step 2: Direct to the *UW-Course-Scheduler* directory and run the  `setup` program as administrator, or copy-paste the following command in terminal and execute:
 ```
@@ -66,6 +66,14 @@ This project is currently in beta test version and runs on terminal. To execute 
 (4) Go to your UW Course Scheduler folder, direct to `docs\client\`, open `client_current_schedule.txt` file, paste the copied text and save the file
 
 <img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/6552189d-0e13-4040-95ae-eb5ad0936fb1" alt="image" width="300" height="200" />
+
+#### Step 2: Specify which term you're in and courses you wish to take
+Open file `global_variables.py` under the *UW-Course-Scheduler* directory
+
+Enter the term code and courses you wish to take, save the file. (Note: you can find term code info [here](https://classes.uwaterloo.ca/under.html))
+
+<img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/8b63f106-4a41-4376-838c-2d8bb4f632c9" alt="image" width="80%" height="80%" />
+
 
 #### Step 2: Run script
 Open terminal and direct to UW-Course-Scheduler directory. Run `python script.py`
