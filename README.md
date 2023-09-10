@@ -4,7 +4,7 @@
 <img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/1ad7a803-3a0b-4cc8-bec8-9421c8b44246" alt="image" width="100%" height="100%" />
 
 
-## Features:
+## Features
 * Import your current schedule from text and display in calendar format or list format
   
   List format:
@@ -33,12 +33,6 @@
   <img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/2b64baa0-06ab-4f2f-857e-7cd8b4d26ff0" alt="image" width="80%" height="80%" />
 
   <img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/7df9b29c-0eff-4e74-9004-39d425dc63b6" alt="image" width="30%" height="30%" />
-
-
-  
-
-
-
 
 
 ## Setup
