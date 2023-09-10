@@ -29,6 +29,12 @@
   
   <img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/2b64baa0-06ab-4f2f-857e-7cd8b4d26ff0" alt="image" width="80%" height="80%" />
 
+  <img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/7df9b29c-0eff-4e74-9004-39d425dc63b6" alt="image" width="80%" height="80%" />
+
+
+  
+
+
 
 
 
