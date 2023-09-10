@@ -1,6 +1,9 @@
 # UW Couse Scheduler
 ## A schedule planning agent for University of Waterloo students
 
+<img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/c309779f-c995-4a2c-aba0-deacefa02491" alt="image" width="80%" height="80%" />
+
+
 ## Features:
 * Import your current schedule from text and display in calendar format or list format
   
@@ -72,8 +75,6 @@ This project is currently in beta test version and runs on terminal. To execute 
 
 #### Step 2: Run script
 Open terminal and direct to UW-Course-Scheduler directory. Run `python script.py`
-
-<img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/c309779f-c995-4a2c-aba0-deacefa02491" alt="image" width="300" height="200" />
 
 Follow the instructions to proceed.
 
