@@ -2,7 +2,7 @@
 ## A schedule planning agent for University of Waterloo students
 
 ## Features:
-* Get your current schedule and display in calendar format or list format
+* Import your current schedule from text and display in calendar format or list format
   
   List format:
   
@@ -21,7 +21,12 @@
 
 
 * Import your friend's schedule and show instructions to convert from your current schedule to your friend's
+  <img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/cbcc639f-d84e-4727-8b57-0893957b1684" alt="image" width="80%" height="80%" />
+
+
 * Adjust your schedule (show latest courses/sessions info, add/drop courses, swap sessions), changes reflected on calendar display in real time
+  <img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/2b64baa0-06ab-4f2f-857e-7cd8b4d26ff0" alt="image" width="80%" height="80%" />
+
 
 
 
