@@ -3,6 +3,11 @@
 
 ## Features:
 * Get your current schedule and display in calendar format or list format
+  ![image](https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/75c7cbad-0057-4df0-a54b-01e17ff030fe)
+
+  ![image](https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/896e7dfd-f095-4927-b133-c21df2f23354)
+
+
 
   <img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/75c7cbad-0057-4df0-a54b-01e17ff030fe" alt="image" width="50%" height="50%" />
 
