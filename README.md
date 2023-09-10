@@ -1,5 +1,5 @@
 # UW Couse Scheduler
-*** - A Schedule Planning Agent for University of Waterloo Students ***
+***A Schedule Planning Agent for University of Waterloo Students***
 
 <img src="https://github.com/Sirius-Hou/UW-Course-Scheduler/assets/118148925/c309779f-c995-4a2c-aba0-deacefa02491" alt="image" width="100%" height="100%" />
 
